@@ -1,0 +1,114 @@
+{
+  "brand": "Sugarmile",
+  "orderPrefix": "SG",
+  "subscribePct": 15,
+  "bundle": [
+    {
+      "min": 2,
+      "pct": 5
+    },
+    {
+      "min": 3,
+      "pct": 10
+    }
+  ],
+  "freeShipOver": 50,
+  "shipping": [
+    {
+      "id": "standard",
+      "label": "Standard",
+      "eta": "3\u20135 business days",
+      "price": 4.95
+    },
+    {
+      "id": "express",
+      "label": "Express",
+      "eta": "1\u20132 business days",
+      "price": 11.95
+    }
+  ],
+  "codes": [
+    {
+      "code": "WELCOME10",
+      "pct": 10
+    },
+    {
+      "code": "WHEEL5",
+      "pct": 5
+    },
+    {
+      "code": "WHEEL10",
+      "pct": 10
+    },
+    {
+      "code": "WHEEL15",
+      "pct": 15
+    }
+  ],
+  "variants": [
+    {
+      "sku": "SG-OG-12",
+      "flavor": "OG",
+      "size": "12",
+      "price": 36,
+      "stock": 260,
+      "lowStockAt": 40
+    },
+    {
+      "sku": "SG-OG-24",
+      "flavor": "OG",
+      "size": "24",
+      "price": 66,
+      "stock": 120,
+      "lowStockAt": 25
+    },
+    {
+      "sku": "SG-SX-12",
+      "flavor": "SX",
+      "size": "12",
+      "price": 36,
+      "stock": 180,
+      "lowStockAt": 40
+    },
+    {
+      "sku": "SG-SX-24",
+      "flavor": "SX",
+      "size": "24",
+      "price": 66,
+      "stock": 70,
+      "lowStockAt": 25
+    },
+    {
+      "sku": "SG-CB-12",
+      "flavor": "CB",
+      "size": "12",
+      "price": 36,
+      "stock": 140,
+      "lowStockAt": 40
+    },
+    {
+      "sku": "SG-CB-24",
+      "flavor": "CB",
+      "size": "24",
+      "price": 66,
+      "stock": 18,
+      "lowStockAt": 25
+    },
+    {
+      "sku": "SG-MX-12",
+      "flavor": "MX",
+      "size": "12",
+      "price": 36,
+      "stock": 200,
+      "lowStockAt": 40
+    },
+    {
+      "sku": "SG-MX-24",
+      "flavor": "MX",
+      "size": "24",
+      "price": 66,
+      "stock": 90,
+      "lowStockAt": 25
+    }
+  ]
+}
