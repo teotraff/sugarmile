@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Sugarmile Maple Energy Gel</title>
 <meta name="description" content="Pure maple syrup and sea salt energy gel. 25 g carbs, 220 or 500 mg sodium, caffeine option. Free US shipping over $50.">
-<meta property="og:type" content="product"><meta property="og:title" content="Sugarmile Maple Energy Gel"><meta property="og:description" content="Pure maple syrup and sea salt energy gel. 25 g carbs, 220 or 500 mg sodium, caffeine option. Free US shipping over $50."><meta property="og:image" content="img/SG-group.webp">
+<meta property="og:type" content="product"><meta property="og:title" content="Sugarmile Maple Energy Gel"><meta property="og:description" content="Pure maple syrup and sea salt energy gel. 25 g carbs, 220 or 500 mg sodium, caffeine option. Free US shipping over $50."><meta property="og:image" content="https://__DOMAIN__/img/SG-group.webp">
 <meta name="theme-color" content="#ffffff">
-<link rel="preload" href="img/SG-OG-12.webp" as="image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Sugarmile Maple Energy Gel", "brand": {"@type": "Brand", "name": "Sugarmile"}, "description": "Pure maple syrup and sea salt energy gel. 25 g carbs, 220 or 500 mg sodium, caffeine option. Free US shipping over $50.", "image": ["img/SG-group.webp"], "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": 36, "highPrice": 66, "availability": "https://schema.org/InStock"}}</script>
+<link rel="preload" href="img/SG-hero.webp" as="image" fetchpriority="high">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Sugarmile Maple Energy Gel", "brand": {"@type": "Brand", "name": "Sugarmile"}, "description": "Pure maple syrup and sea salt energy gel. 25 g carbs, 220 or 500 mg sodium, caffeine option. Free US shipping over $50.", "image": ["https://__DOMAIN__/img/SG-group.webp"], "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": 36, "highPrice": 66, "availability": "https://schema.org/InStock"}}</script>
 <style>
 /* ---- storefront structure v2 (light DTC layout; colors/type from brand tokens) ---- */
 :root{color-scheme:light}
@@ -41,7 +43,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .nav button:hover{color:var(--accent-text)}
 .cartbtn{position:relative;display:flex;align-items:center;gap:.4rem;background:none;color:var(--ink);border:0;padding:.4rem;cursor:pointer;font-weight:600}
 .cartbtn svg{width:26px;height:26px}
-.cartbtn .count{position:absolute;top:-2px;right:-4px;background:var(--accent);color:var(--accent-ink);border-radius:999px;min-width:1.2rem;height:1.2rem;display:grid;place-items:center;font-size:.7rem;padding:0 .3rem}
+.cartbtn .count{position:absolute;top:-2px;right:-4px;background:var(--accent);color:var(--accent-ink);border-radius:999px;min-width:1.2rem;height:1.2rem;display:grid;place-items:center;font-size:.7rem;padding:0 .3rem}.cartbtn .count[hidden]{display:none}
 @media (max-width:760px){.nav{display:none}.cartbtn{margin-left:auto}}
 
 /* buttons */
@@ -64,7 +66,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .gal__main{position:relative;background:#fff;border-radius:var(--r-card);overflow:hidden;aspect-ratio:1;border:1px solid var(--line)}
 .gal__main img{width:100%;height:100%;object-fit:cover}
 .gal__badge{position:absolute;top:1rem;left:1rem;background:var(--accent);color:var(--accent-ink);font:700 .72rem/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:.5rem .7rem;border-radius:var(--r-chip)}
-.gal__thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem}
+.gal__thumbs{display:grid;grid-template-columns:repeat(7,1fr);gap:.6rem}
 .gal__t{padding:0;border:1.5px solid var(--line);border-radius:var(--r-chip);overflow:hidden;background:#fff;cursor:pointer;aspect-ratio:1}
 .gal__t img{width:100%;height:100%;object-fit:cover}
 .gal__t.is-on{border-color:var(--ink)}
@@ -110,7 +112,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .notify{display:grid;gap:.5rem;font-size:.9rem;background:var(--tint);padding:1rem;border-radius:var(--r-chip)}
 .notify__row{display:flex;gap:.5rem;flex-wrap:wrap}.notify__row input{flex:1 1 200px}
 @media (max-width:900px){.pdp__in{grid-template-columns:1fr}.gal{position:static}}
-@media (max-width:480px){.gal__thumbs{grid-template-columns:repeat(5,1fr);gap:.4rem}.trust{grid-template-columns:1fr}.trust li{flex-direction:row;text-align:left}}
+@media (max-width:480px){.gal__thumbs{grid-template-columns:repeat(7,1fr);gap:.4rem}.trust{grid-template-columns:1fr}.trust li{flex-direction:row;text-align:left}}
 
 /* stars */
 .stars{display:inline-flex;gap:2px}
@@ -179,11 +181,11 @@ button,input,select,textarea{font:inherit;color:inherit}
 @media (max-width:860px){.facts-wrap{grid-template-columns:1fr}.ingr{grid-template-columns:1fr}}
 
 /* banner */
-.banner{display:grid;grid-template-columns:1.2fr 1fr;padding:0;background:var(--banner-bg);color:var(--banner-ink)}
-.banner__img{min-height:420px}.banner__img img{width:100%;height:100%;object-fit:cover}
+.banner{display:grid;grid-template-columns:1fr 1fr;padding:0;background:var(--banner-bg);color:var(--banner-ink)}
+.banner__img{aspect-ratio:1} /* photos carry text: show them whole */.banner__img img{width:100%;height:100%;object-fit:cover}
 .banner__copy{padding:clamp(2rem,6vw,5rem);align-self:center;max-width:560px}
 .banner__copy .eyebrow{color:inherit;opacity:.75}.banner__copy p{opacity:.85}
-@media (max-width:820px){.banner{grid-template-columns:1fr}.banner__img{min-height:0;aspect-ratio:4/3}}
+@media (max-width:820px){.banner{grid-template-columns:1fr}.banner__img{aspect-ratio:1}}
 
 /* reviews */
 .rev__head{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
@@ -200,7 +202,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .rev__empty{border:1.5px dashed var(--line-strong);border-radius:var(--r-card);padding:2rem;text-align:center;color:var(--ink-2)}
 .rev__form{display:grid;gap:.9rem;background:var(--tint);border-radius:var(--r-card);padding:1.5rem;margin-bottom:1.5rem;max-width:720px}
 .rate{display:flex;gap:.2rem;flex-direction:row-reverse;justify-content:flex-end}
-.rate label{cursor:pointer;font-size:1.8rem;line-height:1;color:var(--line-strong)}.rate input{position:absolute;opacity:0}
+.rate label{position:relative;cursor:pointer;font-size:1.8rem;line-height:1;color:var(--line-strong)}.rate input{position:absolute;inset:0;margin:0;opacity:0;pointer-events:none}
 .rate label:has(input:checked) span,.rate label:has(input:checked)~label span{color:var(--star)}
 .rate label:hover span,.rate label:hover~label span{color:var(--star)}
 .lbl{font-size:.82rem;color:var(--muted)}
@@ -241,7 +243,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none}
 
 /* footer */
 .ftr{background:var(--ftr-bg);color:var(--ftr-ink);padding-block:3.5rem 2rem;font-size:.9rem}
-.ftr__in{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}
+.ftr__in{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.4fr;gap:2rem}
 .ftr h4{margin:0 0 .8rem;font:600 .75rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;opacity:.7}
 .ftr ul{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
 .ftr .link{text-decoration:none;opacity:.85}.ftr .link:hover{opacity:1;text-decoration:underline}
@@ -281,6 +283,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none}
 .sticky img{width:48px;height:48px;object-fit:cover;border-radius:8px}
 .sticky div{display:grid;flex:1;min-width:0;line-height:1.25}.sticky span{font-size:.82rem;color:var(--muted)}
 body[data-view="admin"] .sticky,body[data-view="checkout"] .sticky{display:none}
+body:has(.sticky.show) .ftr{padding-bottom:calc(2rem + 76px + env(safe-area-inset-bottom,0px))}
 
 /* checkout */
 .checkout{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(1.5rem,4vw,4rem);padding-block:2rem 4rem;align-items:start}
@@ -289,7 +292,7 @@ body[data-view="admin"] .sticky,body[data-view="checkout"] .sticky{display:none}
 .ck legend{font-weight:700;font-size:1.1rem;margin-bottom:.8rem}
 .back{justify-self:start;color:var(--muted)}
 .f{display:grid;gap:.3rem;min-width:0}.f label{font-size:.82rem;color:var(--muted)}
-.f.is-bad input,.f.is-bad select{border-color:var(--bad)}
+.f.is-bad input:not([type=checkbox]),.f.is-bad select{border-color:var(--bad)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.grid3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.8rem}
 @media (max-width:560px){.grid2,.grid3{grid-template-columns:1fr}}
 .check{display:flex;gap:.6rem;align-items:center;font-size:.9rem}.check input{width:1.1rem;height:1.1rem;accent-color:var(--ink)}
@@ -297,8 +300,20 @@ body[data-view="admin"] .sticky,body[data-view="checkout"] .sticky{display:none}
 .shipopt{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem;align-items:center;border:1.5px solid var(--line);border-radius:var(--r-chip);padding:.9rem 1rem;cursor:pointer;background:#fff}
 .shipopt:has(input:checked){border-color:var(--ink);background:var(--tint)}.shipopt input{accent-color:var(--ink)}
 .shipopt span{display:grid}.shipopt em{font-style:normal;font-size:.8rem;color:var(--muted)}.shipopt strong{font-family:var(--f-mono)}
-.paybox{border:1.5px dashed var(--line-strong);border-radius:var(--r-chip);padding:1rem 1.2rem;font-size:.9rem;color:var(--muted)}
-.paybox p{margin:.2rem 0}.paybox b{color:var(--ink)}
+.pm__sub{margin:-.6rem 0 0;font-size:.9rem;color:var(--muted)}
+.pm{border:1.5px solid var(--line);border-radius:var(--r-chip);background:#fff;overflow:hidden}
+.pm__opt{display:flex;align-items:center;gap:.8rem;padding:.9rem 1rem;cursor:pointer}.pm__opt input{accent-color:var(--ink);width:1.1rem;height:1.1rem;margin:0}
+.pm__opt b{flex:1}.pm__opt:has(input:checked){box-shadow:inset 0 0 0 1.5px var(--ink);border-radius:var(--r-chip)}
+.pm__body+.pm__opt,.pm__opt+.pm__opt{border-top:1px solid var(--line)}
+.pm__body{display:grid;gap:.8rem;padding:1rem;background:var(--tint);border-top:1px solid var(--line)}
+.pm__body:has(#cc-same:checked) .pm__bill{display:none}
+.pm__bill{display:grid;gap:.8rem}
+.cards{display:flex;gap:.3rem}.cc{display:block;width:38px;height:24px;transition:opacity .2s}.cc svg{display:block;width:100%;height:100%}
+.pm[data-cc=visa] .cc:not(.cc--visa),.pm[data-cc=mc] .cc:not(.cc--mc),.pm[data-cc=amex] .cc:not(.cc--amex),.pm[data-cc=disc] .cc:not(.cc--disc){opacity:.25}
+.pm__ic{position:relative}.pm__ic input{padding-right:2.8rem}
+.pm__ic>svg,.pm__q{position:absolute;right:.9rem;bottom:.85rem;width:1.15rem;height:1.15rem;color:var(--muted)}
+.pm__q{display:grid;place-items:center;border:1.5px solid currentColor;border-radius:50%;font:700 .7rem/1 var(--f-body);cursor:help}
+@media (max-width:560px){.grid2.keep2{grid-template-columns:1fr 1fr}.cc--disc{display:none}}
 .err{color:var(--bad);font-weight:600;margin:0}
 .ck-sum{background:var(--tint);border-radius:var(--r-card);padding:1.5rem;position:sticky;top:90px;min-width:0}
 .ck-sum h2{margin:0 0 1rem;font-size:1.15rem}.lines--sum{overflow:visible}
@@ -324,11 +339,16 @@ body[data-view="admin"] .sticky,body[data-view="checkout"] .sticky{display:none}
 .tbl td{padding:.7rem .8rem;border-bottom:1px solid var(--line);vertical-align:middle}
 .tbl tr:last-child td{border-bottom:0}.tbl .num{text-align:right}.tbl .empty{text-align:center;color:var(--muted);padding:2rem}
 .tbl td.mono{white-space:nowrap}
+.src{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.15rem .6rem;font-size:.8rem;line-height:1.35;min-width:190px;max-width:240px}
+.tbl td.items{min-width:150px}
+.src dt{color:var(--muted)}.src dd{margin:0;overflow-wrap:anywhere}
 .tbl__prod{display:flex;gap:.7rem;align-items:center;min-width:170px}.tbl__prod img{width:44px;height:44px;border-radius:6px;object-fit:cover;border:1px solid var(--line)}
 .tbl .in.in--num{width:6.2rem;text-align:right;font-family:var(--f-mono);padding:.45rem .5rem}
 .tbl .in.in--sm{width:4.5rem}
 .tbl select.in{padding:.45rem .5rem;width:auto}
 .tbl .actions{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
+.del{background:none;border:0;border-radius:6px;padding:.35rem .5rem;cursor:pointer;color:var(--muted);white-space:nowrap}
+.del:hover{color:var(--bad);background:var(--tint)}.del.is-armed{background:var(--bad);color:#fff}
 .stepper{display:inline-flex;align-items:center;gap:.2rem}
 .stepper button{width:1.8rem;height:1.8rem;border-radius:6px;border:1px solid var(--line);background:#fff;cursor:pointer}
 .tbl .stepper .in.in--num{width:5rem}
@@ -439,7 +459,13 @@ body[data-view="admin"] .announce{display:none}
 .seg2{display:flex;flex-wrap:wrap;gap:.4rem}
 .seg2 button{flex:1 1 auto;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:.55rem .8rem;font-size:.82rem;font-weight:600;cursor:pointer}
 .seg2 button.is-on{background:var(--ink);color:#fff;border-color:var(--ink)}
-input[type=range]{width:100%;accent-color:var(--accent);padding:0!important;border:0!important;background:none!important}
+input[type=range]{-webkit-appearance:none;appearance:none;display:block;width:100%;height:44px;margin:0;padding:0!important;border:0!important;background:none!important;touch-action:pan-y;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:8px;background:linear-gradient(var(--accent),var(--accent)) 0/var(--p,50%) 100% no-repeat,var(--line)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;margin-top:-12px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 2px 6px rgba(0,0,0,.25)}
+input[type=range]::-moz-range-track{height:8px;border-radius:8px;background:var(--line)}
+input[type=range]::-moz-range-progress{height:8px;border-radius:8px;background:var(--accent)}
+input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 2px 6px rgba(0,0,0,.25)}
+input[type=range]:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .tool__out{display:grid;gap:.5rem;border-top:1px dashed var(--line);padding-top:.9rem}
 .tool__out p{margin:0}
 .tool__big{font:700 1.7rem/1.1 var(--f-display);text-transform:var(--dt);letter-spacing:var(--ds)}
@@ -507,11 +533,11 @@ input[type=range]{width:100%;accent-color:var(--accent);padding:0!important;bord
 .wheel__body .popup__big{font-size:clamp(1.4rem,5vw,1.9rem);line-height:1.15}
 
 /* SUGARMILE: trail-country premium. Warm cream, deep forest green, maple-amber accent. NationalPark display, Work Sans body, DM Mono labels. Light-only. */
-@font-face{font-family:"National Park";src:url(fonts/NationalPark-Regular.ttf) format("truetype");font-weight:400 500;font-display:swap}
-@font-face{font-family:"National Park";src:url(fonts/NationalPark-Bold.ttf) format("truetype");font-weight:600 800;font-display:swap}
-@font-face{font-family:"Work Sans";src:url(fonts/WorkSans-Regular.ttf) format("truetype");font-weight:300 500;font-display:swap}
-@font-face{font-family:"Work Sans";src:url(fonts/WorkSans-Bold.ttf) format("truetype");font-weight:600 800;font-display:swap}
-@font-face{font-family:"DM Mono";src:url(fonts/DMMono-Regular.ttf) format("truetype");font-weight:400 600;font-display:swap}
+@font-face{font-family:"National Park";src:url(fonts/NationalPark-Regular.woff2) format("woff2");font-weight:400 500;font-display:swap}
+@font-face{font-family:"National Park";src:url(fonts/NationalPark-Bold.woff2) format("woff2");font-weight:600 800;font-display:swap}
+@font-face{font-family:"Work Sans";src:url(fonts/WorkSans-Regular.woff2) format("woff2");font-weight:300 500;font-display:swap}
+@font-face{font-family:"Work Sans";src:url(fonts/WorkSans-Bold.woff2) format("woff2");font-weight:600 800;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(fonts/DMMono-Regular.woff2) format("woff2");font-weight:400 600;font-display:swap}
 :root{
   --bg:#FFFCF6;--tint:#F5ECDD;--ink:#1F3A2E;--ink-2:#34503F;--muted:#6B7466;--line:#E8DCC8;--line-strong:#C7B496;
   --accent:#C2701E;--accent-hover:#A65D14;--accent-ink:#FFFFFF;--accent-text:#A65D14;--star:#C2701E;
@@ -569,13 +595,22 @@ input[type=range]{width:100%;accent-color:var(--accent);padding:0!important;bord
   <nav class="nav" aria-label="Main"><button data-act="scroll" data-to="shop">Shop</button><button data-act="scroll" data-to="why">Why Sugarmile</button><button data-act="scroll" data-to="facts">Ingredients</button><button data-act="scroll" data-to="reviews">Reviews</button><button data-act="scroll" data-to="faq">FAQ</button></nav>
   <button class="cartbtn" data-act="cart-open" aria-label="Open cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 002 1.6h7.6a2 2 0 002-1.5L20.5 8H6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19.5" r="1.4" fill="currentColor"/><circle cx="17" cy="19.5" r="1.4" fill="currentColor"/></svg><span class="count" id="cart-count" aria-live="polite" hidden>0</span></button>
 </div></header>
-<main id="view"></main>
+<main id="view"><noscript><section class="wrap narrow" style="padding:3rem 0">
+<h1 class="h2">Sugarmile Maple Energy Gel</h1>
+<p>Pure maple syrup and sea salt energy gel. 25 g carbs, 220 or 500 mg sodium, caffeine option. Free US shipping over $50.</p>
+<ul>__PRICES__</ul>
+<p>Subscribe &amp; Save is 15% off and renews every 30 days until you cancel.</p>
+<p>Shipping: Standard (3–5 business days) $5.95, free on orders over $50. Express (1–2 business days) $12.95. US only. Sales tax is calculated at checkout.</p>
+<p>This store needs JavaScript to shop. Policies: <a href="/terms">Terms of Service</a> · <a href="/privacy">Privacy Policy</a> · <a href="/refund-policy">Refund Policy</a> · <a href="/shipping">Shipping</a> · <a href="/contact">Contact us</a></p>
+</section></noscript></main>
 <footer class="ftr"><div class="wrap ftr__in">
   <div><div class="logo" aria-hidden="true"><span class="logo__mark"></span><span class="logo__word">Sugarmile</span></div><p>Maple energy gel. Pure maple syrup and sea salt, made for long days outside.</p></div>
   <div><h4>Shop</h4><ul><li><button class="link" data-act="scroll" data-to="shop">All flavors</button></li><li><button class="link" data-act="scroll" data-to="newsletter">10% off first order</button></li><li><button class="link" data-act="scroll" data-to="facts">Ingredients</button></li><li><button class="link" data-act="scroll" data-to="reviews">Reviews</button></li></ul></div>
-  <div><h4>Help</h4><ul><li><button class="link" data-act="scroll" data-to="faq">FAQ</button></li><li><button class="link" data-act="track">Track your order</button></li><li><button class="link" data-act="policy" data-id="shipping">Shipping</button></li><li><button class="link" data-act="policy" data-id="returns">Returns &amp; refunds</button></li><li><button class="link" id="admin-link" data-act="admin" hidden>Store admin</button></li></ul></div>
-  <div><h4>Legal</h4><ul><li><button class="link" data-act="policy" data-id="privacy">Privacy</button></li><li><button class="link" data-act="policy" data-id="terms">Terms</button></li></ul></div>
-  <p class="disclaimer">Sugarmile energy gels are a food for active adults. Cold Brew Maple contains 50 mg caffeine per pouch and is not recommended for children, people sensitive to caffeine, or women who are pregnant or nursing. Consult your physician before starting a new nutrition plan, especially if you have diabetes or a medical condition. © 2026 Sugarmile.</p>
+  <div><h4>Help</h4><ul><li><button class="link" data-act="scroll" data-to="faq">FAQ</button></li><li><button class="link" data-act="track">Track your order</button></li><li><a class="link" href="/shipping">Shipping</a></li><li><a class="link" href="/refund-policy">Refund policy</a></li><li><a class="link" href="/contact">Contact us</a></li><li><button class="link" id="admin-link" data-act="admin" hidden>Store admin</button></li></ul></div>
+  <div><h4>Legal</h4><ul><li><a class="link" href="/privacy">Privacy policy</a></li><li><a class="link" href="/terms">Terms of service</a></li></ul></div>
+  <div><h4>Contact</h4><ul><li><a class="link" href="mailto:support@__DOMAIN__">support@__DOMAIN__</a></li><li><a class="link" href="tel:+13075550142">+1 (307) 555-0142</a><br><small>Mon–Fri, 9 am–5 pm ET, voicemail after hours</small></li><li>600 Pine Street, Suite 410, Seattle, WA 98101</li><li>We reply within 1 business day.</li></ul></div>
+
+  <p class="disclaimer">Sugarmile energy gels are a food for active adults. Cold Brew Maple contains 50 mg caffeine per pouch and is not recommended for children, people sensitive to caffeine, or women who are pregnant or nursing. Consult your physician before starting a new nutrition plan, especially if you have diabetes or a medical condition.<br>© 2026 Rainbridge Market LLC, 600 Pine Street, Suite 410, Seattle, WA 98101. Sugarmile is a brand of Rainbridge Market LLC.</p>
 </div></footer>
 <div class="sticky" id="sticky" aria-label="Quick add"></div>
 <div class="scrim" id="scrim" hidden></div>
@@ -583,7 +618,7 @@ input[type=range]{width:100%;accent-color:var(--accent);padding:0!important;bord
 <div class="scrim" id="scrim2" hidden></div>
 <div class="popup" id="popup" hidden role="dialog" aria-modal="true" aria-label="10% off your first order">
   <button class="icon-btn x" data-act="popup-close" aria-label="Close">✕</button>
-  <div class="popup__img"><img src="img/SG-color-OG.webp" alt=""></div>
+  <div class="popup__img"><img src="img/SG-color-OG.webp" alt="" loading="lazy"></div>
   <div class="popup__band"><p class="eyebrow">Before your next long run</p><p class="popup__big">Get 10% off</p></div>
   <div id="popup-body"><p>Join the list for 10% off your first box, plus fueling guides and new flavors first.</p>
     <form data-form="popup" novalidate><label class="sr" for="pop-email">Email</label><input id="pop-email" name="email" type="email" placeholder="Your email address" required autocomplete="email"><button class="btn btn--accent btn--block" type="submit">Unlock 10% off</button></form>
@@ -615,8 +650,10 @@ window.STORE_CONFIG = (function () {
     packImg: (v) => `SG-${v.flavor}-${v.size}`,
     flavors, sizes, variants,
     subscribePct: 15, subscribeEvery: "every 30 days",
-    freeShipOver: 50, supportEmail: "",
-    shipping: [{ id: "standard", label: "Standard", eta: "3–5 business days", price: 4.95 }, { id: "express", label: "Express", eta: "1–2 business days", price: 11.95 }],
+    freeShipOver: 50, supportEmail: "support@__DOMAIN__",
+    metaPixelId: "__META_PIXEL_ID__", // Meta Pixel ID, filled by server.js from META_PIXEL_ID in .env; empty = off
+    clarityId: "__CLARITY_ID__", // Microsoft Clarity project ID, filled by server.js from CLARITY_ID in .env; empty = off
+    shipping: [{ id: "standard", label: "Standard", eta: "3–5 business days", price: 5.95 }, { id: "express", label: "Express", eta: "1–2 business days", price: 12.95 }],
     promo: { code: "WELCOME10", pct: 10 }, codes: [{ code: "WELCOME10", pct: 10 }, { code: "WHEEL5", pct: 5 }, { code: "WHEEL10", pct: 10 }, { code: "WHEEL15", pct: 15 }],
     tool: "fuel",
     fuel: { carbs: 25, unit: "pouches" },
@@ -683,7 +720,7 @@ window.STORE_CONFIG = (function () {
       ],
       guaranteeTitle: "Love the taste or it's free", guaranteeText: "Try your first box on a real run. If it's not for you, we'll refund your first order within 30 days of delivery.",
       newsTitle: "10% off your first box", newsSub: "Plus fueling guides, race-week tips and first dibs on new flavors.",
-      thanks: "Your fuel is on the way.",
+      thanks: "Your fuel is on the way.", soldOut: "We ran out of syrup.",
     },
     facts: {
       info: ["100 calories per pouch from pure maple syrup.", "Sodium is the main mineral lost in sweat. 220 mg here, 500 mg in Salted Maple+.", null, null, "Maple syrup counts as added sugar on US labels, even though it's the only sweetener.", null, "Naturally occurring in maple syrup.", "Maple syrup is naturally rich in manganese, which plays a role in normal energy metabolism."],
@@ -697,8 +734,23 @@ window.STORE_CONFIG = (function () {
 
 </script>
 <script>
+// Microsoft Clarity: not loaded for the store admin, so the token and customer data never get recorded
+(function () {
+  const id = window.STORE_CONFIG.clarityId, admin = location.hash === "#admin" || sessionStorage.getItem(window.STORE_CONFIG.key + ":adminToken");
+  if (!id || admin) return;
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", id);
+})();
+// Meta Pixel: same rule, never for the store admin
+(function () {
+  const id = window.STORE_CONFIG.metaPixelId, admin = location.hash === "#admin" || sessionStorage.getItem(window.STORE_CONFIG.key + ":adminToken");
+  if (!/^\d+$/.test(id) || admin) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+  fbq("init", id); fbq("track", "PageView");
+})();
+</script>
+<script>
 /* ============================================================
-   Storefront engine v2 (shared by Solid State, Thirty, Spout)
+   Storefront engine v2 (shared by Solid State, Thirty, Spout, ebb, Wildcomb, Sugarmile)
    Catalog and copy: window.STORE_CONFIG
    Data: `Store` adapter with three back ends
      - "api"  : your own server (set window.STORE_API = "/api")
@@ -722,8 +774,14 @@ window.STORE_CONFIG = (function () {
   const emailOk = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(e || "").trim());
   const emailKey = (e) => String(e).trim().toLowerCase().replace(/[^a-z0-9_\-.~:@+]/g, "_").slice(0, 190);
   const variantBy = (sku) => C.variants.find((v) => v.sku === sku);
+  // Meta Pixel event; eventID matches the server (Conversions API) copy so Meta counts it once
+  const px = (ev, data, eventID) => { try { if (window.fbq) eventID ? fbq("track", ev, data, { eventID }) : fbq("track", ev, data); } catch (e) {} };
+  const pxCart = (lines) => ({ currency: "USD", content_type: "product", content_ids: lines.map((l) => l.sku), contents: lines.map((l) => ({ id: l.sku, quantity: l.qty, item_price: l.unit ?? lineUnit(l) })), num_items: lines.reduce((s, l) => s + l.qty, 0) });
+  const pxView = () => { const v = C.variants.find((x) => x.flavor === S.sel.flavor && x.size === S.sel.size); if (v) px("ViewContent", { currency: "USD", value: priceOf(v.sku), content_type: "product", content_ids: [v.sku] }); };
   const flavorBy = (id) => C.flavors.find((f) => f.id === id);
   const sizeBy = (id) => C.sizes.find((s) => s.id === id);
+  const thumb = (v) => img(C.packImg(v) + "-thumb"); // 320px copy of the pack shot for swatches, cart, cross-sell, sticky bar, quiz
+  const rp = (v, a, b) => `style="--p:${((v - a) / (b - a)) * 100}%"`; // filled part of a range track
   const stars = (n) => { const r = Math.round(n * 2) / 2; let s = ""; for (let i = 1; i <= 5; i++) s += `<i class="st${r >= i ? " on" : r >= i - .5 ? " half" : ""}"></i>`; return `<span class="stars" aria-label="${n.toFixed(1)} out of 5">${s}</span>`; };
 
   /* ---------------- data adapter ---------------- */
@@ -814,9 +872,13 @@ window.STORE_CONFIG = (function () {
       if (order.marketing) await this.addSubscriber({ email: order.email, source: "checkout", name: order.name });
       return { ok: true, id, order: full };
     },
-    async addSubscriber({ email, source, sku, name }) {
+    async addSubscriber({ email, source, sku, name, code }) {
       email = String(email).trim().toLowerCase(); const key = emailKey(email);
-      if (this.mode === "api") return this._req("POST", "/subscribers", { email, source, sku, name });
+      if (this.mode === "api") {
+        const eid = "L" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8), j = await this._req("POST", "/subscribers", { email, source, sku, name, code, eid });
+        if (j && j.fresh && ["wheel", "popup", "quiz"].includes(source)) px("Lead", {}, eid);
+        return j;
+      }
       const merge = (prev) => ({ email, name: name || prev?.name || "", sources: Array.from(new Set([...(prev?.sources || []), source])), restock: Array.from(new Set([...(prev?.restock || []), ...(sku ? [sku] : [])])), consent: true, createdAt: prev?.createdAt || nowISO(), updatedAt: nowISO() });
       if (this.mode === "live") { const ref = this.db.doc("subscribers/" + key); const s = await ref.get(); await ref.set(merge(s.exists ? s.data() : null)); }
       else { const all = LS.get("demo:subs", {}); all[key] = merge(all[key]); LS.set("demo:subs", all); this._demoEmit(); }
@@ -890,6 +952,17 @@ window.STORE_CONFIG = (function () {
       if (this.mode === "live") { for (const sku of Object.keys(d)) { const ref = this.db.doc("products/" + sku); const s = await ref.get(); if (!s.exists) await ref.set(Object.assign({}, d[sku], { updatedAt: nowISO() })); } return; }
       LS.set("demo:inv", d); this._demoEmit();
     },
+    async deleteOrder(o) {
+      if (this.mode === "api") return this._req("DELETE", "/admin/orders/" + encodeURIComponent(o.id), null, true);
+      if (!["cancelled", "shipped", "delivered"].includes(o.status)) await this.setOrderStatus(o, "cancelled"); // give reserved stock back first
+      if (this.mode === "live") return this.db.doc("orders/" + o.id).delete();
+      LS.set("demo:orders", LS.get("demo:orders", []).filter((x) => x.id !== o.id)); this._demoEmit();
+    },
+    async deleteSubscriber(email) {
+      if (this.mode === "api") return this._req("DELETE", "/admin/subscribers/" + encodeURIComponent(email), null, true);
+      if (this.mode === "live") return this.db.doc("subscribers/" + emailKey(email)).delete();
+      const all = LS.get("demo:subs", {}); delete all[emailKey(email)]; LS.set("demo:subs", all); this._demoEmit();
+    },
     async setOrderStatus(o, status) {
       if (o.status === status) return;
       if (this.mode === "api") return this._req("PATCH", "/admin/orders/" + o.id, { status }, true);
@@ -913,12 +986,19 @@ window.STORE_CONFIG = (function () {
   const S = {
     inv: null, invLoaded: false, view: "home", lastOrder: null,
     sel: { flavor: C.flavors[0].id, size: C.sizes[C.defaultSize ?? 0].id, qty: 1, sub: true, img: 0 },
-    cart: LS.get("cart", []), promo: LS.get("promo", null),
+    cart: LS.get("cart", []), promo: LS.get("promo", null), pay: {}, // card fields: memory only, never saved or sent
     orders: [], subs: [], reviews: [], allReviews: [], adminTab: "inventory", edits: {}, revForm: false,
     revF: { stars: 0, flavor: "", photos: false, sort: "new" }, revMore: false, revPhoto: "", factOpen: -1, wasFree: undefined,
     tool: { start: new Date().toISOString().slice(0, 10), load: false, min: 60, int: "moderate", hot: false, weekly: 3, months: 6, perDay: 3, days: 5, dur: 90 },
   };
   const saveCart = () => { LS.set("cart", S.cart); LS.set("promo", S.promo); };
+  // ad attribution: the last ad click wins and is kept 30 days; read before boot strips the query from the URL
+  const ATTR_KEYS = ["campaign_name", "adset_name", "ad_name", "network_channel", "source", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+  (() => { const q = new URLSearchParams(location.search), a = {}; ATTR_KEYS.forEach((k) => { const v = q.get(k); if (v) a[k] = v.slice(0, 150); }); if (Object.keys(a).length) LS.set("attr", Object.assign(a, { at: nowISO() })); })();
+  const attr = () => { const a = LS.get("attr", null); return a && Date.now() - Date.parse(a.at) < 30 * 864e5 ? a : null; };
+  // one code at a time: keep whichever gives the bigger discount; false = current one stays
+  const applyBest = (c) => { if (S.promo && S.promo.pct >= c.pct) return false; S.promo = { code: c.code, pct: c.pct }; saveCart(); return true; };
+  const keptMsg = () => `Your code <span class="code">${esc(S.promo.code)}</span> (−${S.promo.pct}%) gives more, so it stays applied.`;
   const priceOf = (sku) => (S.inv && S.inv[sku] && typeof S.inv[sku].price === "number" ? S.inv[sku].price : variantBy(sku).price);
   const stockOf = (sku) => (S.inv && S.inv[sku] ? S.inv[sku].stock : null);
   const activeOf = (sku) => !(S.inv && S.inv[sku] && S.inv[sku].active === false);
@@ -933,9 +1013,6 @@ window.STORE_CONFIG = (function () {
     const g = [];
     const ph = S.inv && S.inv[v.sku] && S.inv[v.sku].photoUrl; if (ph) g.push({ src: ph, alt: `${C.brand} ${flavorBy(v.flavor).name} photo` });
     g.push({ src: img(C.packImg(v)), alt: `${C.brand} ${C.productName}, ${flavorBy(v.flavor).name}, ${sizeBy(v.size).label}` });
-    g.push({ src: img(`${C.imgKey}-color-${v.flavor}`), alt: `${flavorBy(v.flavor).name} ${C.productShort} with ingredients` });
-    g.push({ src: img(`${C.imgKey}-content`), alt: `${C.brand} in use` });
-    g.push({ src: img(`${C.imgKey}-group`), alt: `${C.brand} flavors` });
     (C.extraGallery || []).forEach((x) => g.push({ src: img(x[0]), alt: x[1] }));
     return g;
   }
@@ -977,6 +1054,15 @@ window.STORE_CONFIG = (function () {
     if (st <= (S.inv[sku].lowStockAt ?? 25)) return `<span class="stock stock--low">Low stock: only ${st} left</span>`;
     return `<span class="stock stock--ok">In stock. Ships in 1–2 business days</span>`;
   }
+  // card details are only checked for typos (no payment provider yet)
+  const ccBrand = (n) => (/^4/.test(n) ? "visa" : /^(5[1-5]|2[2-7])/.test(n) ? "mc" : /^3[47]/.test(n) ? "amex" : /^(6011|65|64[4-9])/.test(n) ? "disc" : "");
+  const luhn = (n) => [...n].reverse().reduce((s, c, i) => { let x = +c; if (i % 2) { x *= 2; if (x > 9) x -= 9; } return s + x; }, 0) % 10 === 0;
+  const CC = {
+    visa: '<svg viewBox="0 0 38 24" aria-label="Visa"><rect width="38" height="24" rx="3" fill="#1A1F71"/><text x="19" y="16" text-anchor="middle" font-family="Arial" font-weight="700" font-style="italic" font-size="10" fill="#fff">VISA</text></svg>',
+    mc: '<svg viewBox="0 0 38 24" aria-label="Mastercard"><rect width="38" height="24" rx="3" fill="#222"/><circle cx="15" cy="12" r="7" fill="#EB001B"/><circle cx="23" cy="12" r="7" fill="#F79E1B" fill-opacity=".9"/></svg>',
+    amex: '<svg viewBox="0 0 38 24" aria-label="American Express"><rect width="38" height="24" rx="3" fill="#2E77BC"/><text x="19" y="15.5" text-anchor="middle" font-family="Arial" font-weight="700" font-size="8.5" fill="#fff">AMEX</text></svg>',
+    disc: '<svg viewBox="0 0 38 24" aria-label="Discover"><rect x=".5" y=".5" width="37" height="23" rx="3" fill="#fff" stroke="#D5D8DB"/><text x="17" y="14.5" text-anchor="middle" font-family="Arial" font-weight="700" font-size="5.6" fill="#222">DISC</text><circle cx="26.5" cy="12.4" r="3" fill="#F48120"/></svg>',
+  };
   const ICON = {
     shield: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
     truck: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
@@ -1029,10 +1115,10 @@ window.STORE_CONFIG = (function () {
     <section class="sec banner"><div class="banner__img"><img src="${img(C.bannerImg || C.imgKey + "-content")}" alt="${esc(C.brand)} in use" loading="lazy"></div>
       <div class="banner__copy"><p class="eyebrow">${esc(H.bannerEyebrow)}</p><h2 class="h2">${esc(H.bannerTitle)}</h2><p>${esc(H.bannerText)}</p></div></section>
     <section class="sec reviews" id="reviews"><div class="wrap">${vReviews()}</div></section>
-    <section class="sec faq" id="faq"><div class="wrap faq__in"><div><p class="eyebrow">FAQ</p><h2 class="h2">Questions, answered</h2><p class="muted">Can't find it here? Use the contact details in our policies.</p></div>
+    <section class="sec faq" id="faq"><div class="wrap faq__in"><div><p class="eyebrow">FAQ</p><h2 class="h2">Questions, answered</h2><p class="muted">Can't find it here? Email <a href="mailto:support@__DOMAIN__">support@__DOMAIN__</a> or call +1 (307) 555-0142. We reply within 1 business day.</p></div>
       <div><div class="faq__search"><label class="sr" for="faq-q">Search questions</label><input id="faq-q" type="search" placeholder="Search questions, e.g. “caffeine” or “cancel”" autocomplete="off" data-faq></div>
         <div id="faq-list">${H.faq.map((q, i) => `<details class="faq__item"${i === 0 ? " open" : ""}><summary>${esc(q[0])}</summary><p>${esc(q[1])}</p></details>`).join("")}</div>
-        <p id="faq-none" class="muted" hidden>No matching questions. Our policies at the bottom of the page cover shipping, returns and privacy.</p></div></div></section>
+        <p id="faq-none" class="muted" hidden>No matching questions. Email <a href="mailto:support@__DOMAIN__">support@__DOMAIN__</a> and we'll answer within 1 business day.</p></div></div></section>
     <section class="guarantee"><div class="wrap guarantee__in"><span class="guarantee__seal">${ICON.shield}<b>30</b><small>DAY</small></span><div><h2>${esc(H.guaranteeTitle)}</h2><p>${esc(H.guaranteeText)}</p></div></div></section>
     <section class="sec news" id="newsletter"><div class="wrap news__in">
       <div><h2 class="h2">${esc(H.newsTitle)}</h2><p>${esc(H.newsSub)}</p></div>
@@ -1065,7 +1151,7 @@ window.STORE_CONFIG = (function () {
         <div class="opt"><div class="opt__row"><p class="opt__l">Flavor: <b>${esc(f.name)}</b> <span class="muted">· ${esc(f.desc || "")}</span></p>${C.quiz ? `<button type="button" class="link quiz-link" data-act="quiz">Find your flavor →</button>` : ""}</div>
           ${f.taste ? (f.taste.sweet + f.taste.tart + f.taste.bold ? `<div class="taste" aria-label="Taste profile">${[["Sweet", "sweet"], ["Tart", "tart"], ["Bold", "bold"]].map(([l, k]) => `<div><span>${l}</span><i><b data-w="${f.taste[k] * 20}%"></b></i></div>`).join("")}</div>` : `<p class="taste taste--none">No flavor added. Mixes into anything.</p>`) : ""}
           <div class="swatches">${C.flavors.map((x) => { const vv = C.variants.find((y) => y.flavor === x.id && y.size === sel.size), stv = stockOf(vv.sku), out = S.invLoaded && (stv === null || stv <= 0), low = !out && S.invLoaded && stv <= (S.inv[vv.sku]?.lowStockAt ?? 25);
-            return `<button type="button" class="swatch${x.id === sel.flavor ? " is-on" : ""}${out ? " is-out" : ""}" data-act="flavor" data-id="${x.id}" aria-pressed="${x.id === sel.flavor}" title="${esc(x.name)}${out ? " (sold out)" : ""}"><img src="${img(C.packImg(vv))}" alt="" width="62" height="62" decoding="async"><span>${esc(x.name)}</span>${out ? `<em class="sw__tag sw__tag--out">Sold out</em>` : low ? `<em class="sw__tag">Low</em>` : ""}</button>`; }).join("")}</div></div>
+            return `<button type="button" class="swatch${x.id === sel.flavor ? " is-on" : ""}${out ? " is-out" : ""}" data-act="flavor" data-id="${x.id}" aria-pressed="${x.id === sel.flavor}" title="${esc(x.name)}${out ? " (sold out)" : ""}"><img src="${thumb(vv)}" alt="" width="62" height="62" decoding="async"><span>${esc(x.name)}</span>${out ? `<em class="sw__tag sw__tag--out">Sold out</em>` : low ? `<em class="sw__tag">Low</em>` : ""}</button>`; }).join("")}</div></div>
         <div class="opt"><p class="opt__l">Size</p>
           <div class="sizes">${C.sizes.map((zz) => { const vv = C.variants.find((x) => x.flavor === sel.flavor && x.size === zz.id); const p = priceOf(vv.sku) * (sel.sub ? 1 - C.subscribePct / 100 : 1); return `<button type="button" class="size${zz.id === sel.size ? " is-on" : ""}" data-act="size" data-id="${zz.id}" aria-pressed="${zz.id === sel.size}">${zz.tag ? `<em>${esc(zz.tag)}</em>` : ""}<b>${esc(zz.label)}</b><span>${money(p)}</span><small>${esc(zz.per(p))}</small></button>`; }).join("")}</div></div>
         <div class="plans" role="radiogroup" aria-label="Purchase option">
@@ -1127,7 +1213,7 @@ window.STORE_CONFIG = (function () {
   }
   function vReviewForm() {
     return `<form class="rev__form" data-form="review" novalidate>
-      <div class="f"><span class="lbl">Your rating</span><div class="rate" role="radiogroup" aria-label="Rating">${[1, 2, 3, 4, 5].map((n) => `<label><input type="radio" name="rating" value="${n}" ${n === 5 ? "checked" : ""}><span>★</span></label>`).join("")}</div></div>
+      <div class="f"><span class="lbl">Your rating</span><div class="rate" role="radiogroup" aria-label="Rating">${[5, 4, 3, 2, 1].map((n) => `<label><input type="radio" name="rating" value="${n}" aria-label="${n} star${n > 1 ? "s" : ""}" ${n === 5 ? "checked" : ""}><span>★</span></label>`).join("")}</div></div>
       <div class="grid2"><div class="f"><label for="rv-name">Name</label><input id="rv-name" name="name" maxlength="40" required></div>
       <div class="f"><label for="rv-flavor">Flavor</label><select id="rv-flavor" name="flavor">${C.flavors.map((x) => `<option value="${x.id}">${esc(x.name)}</option>`).join("")}</select></div></div>
       <div class="f"><label for="rv-title">Headline</label><input id="rv-title" name="title" maxlength="80" required></div>
@@ -1143,7 +1229,7 @@ window.STORE_CONFIG = (function () {
     return `<div class="drawer__head"><h2>Your cart</h2><button class="icon-btn" data-act="cart-close" aria-label="Close cart">✕</button></div>
       ${S.cart.length === 0 ? `<div class="drawer__empty"><p>Your cart is empty.</p><button class="btn btn--accent" data-act="cart-shop">Shop ${esc(C.productShort)}</button></div>` : `
       <div class="ship-meter"><p>${left > 0 ? `You're <b>${money(left)}</b> away from free shipping` : `<b>You've unlocked free shipping</b>`}</p><div class="meter"><i style="width:${Math.min(100, ((t.subtotal - t.discount) / C.freeShipOver) * 100)}%"></i></div></div>
-      <ul class="lines">${S.cart.map((l, i) => { const v = variantBy(l.sku); return `<li class="line"><div class="line__art"><img src="${img(C.packImg(v))}" alt=""></div>
+      <ul class="lines">${S.cart.map((l, i) => { const v = variantBy(l.sku); return `<li class="line"><div class="line__art"><img src="${thumb(v)}" alt=""></div>
           <div class="line__info"><b>${esc(flavorBy(v.flavor).name)}</b><span>${esc(sizeBy(v.size).label)}${l.sub ? ` · Subscribe & save` : ""}</span>
             <div class="qty qty--sm"><button data-act="line-qty" data-i="${i}" data-d="-1" aria-label="Decrease">−</button><output>${l.qty}</output><button data-act="line-qty" data-i="${i}" data-d="1" aria-label="Increase">+</button></div></div>
           ${!l.sub ? `<button class="upg" data-act="line-sub" data-i="${i}">Switch to Subscribe &amp; save ${money((priceOf(l.sku) - lineUnit(Object.assign({}, l, { sub: true }))) * l.qty)}</button>` : ""}
@@ -1164,12 +1250,12 @@ window.STORE_CONFIG = (function () {
     const recs = C.flavors.filter((f) => !inCartF.has(f.id)).map((f) => C.variants.find((v) => v.flavor === f.id && v.size === ref.size)).filter((v) => { const st = stockOf(v.sku); return st === null || st > 0; }).slice(0, 2);
     if (!recs.length) return "";
     const next = BUNDLE.find((b) => b.min > t.units), note = next ? `Add ${next.min - t.units} more to save ${next.pct}% on everything` : "Try another flavor";
-    return `<li class="xsell"><p class="xsell__h">${esc(note)}</p>${recs.map((v) => `<div class="xsell__i"><img src="${img(C.packImg(v))}" alt="" width="56" height="56"><div><b>${esc(flavorBy(v.flavor).name)}</b><span>${esc(sizeBy(v.size).label)} · ${money(lineUnit({ sku: v.sku, sub }))}</span></div><button class="btn btn--ghost btn--sm" data-act="xadd" data-sku="${v.sku}" data-sub="${sub ? 1 : 0}">Add</button></div>`).join("")}</li>`;
+    return `<li class="xsell"><p class="xsell__h">${esc(note)}</p>${recs.map((v) => `<div class="xsell__i"><img src="${thumb(v)}" alt="" width="56" height="56"><div><b>${esc(flavorBy(v.flavor).name)}</b><span>${esc(sizeBy(v.size).label)} · ${money(lineUnit({ sku: v.sku, sub }))}</span></div><button class="btn btn--ghost btn--sm" data-act="xadd" data-sku="${v.sku}" data-sub="${sub ? 1 : 0}">Add</button></div>`).join("")}</li>`;
   }
 
   const STATES = "AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split(" ");
   function vCheckout() {
-    const d = LS.get("ck", {}), t = totals(d.ship || "standard");
+    const d = LS.get("ck", {}), t = totals(d.ship || "standard"), P = S.pay;
     if (!S.cart.length) return `<section class="wrap narrow"><h1 class="h2">Checkout</h1><p>Your cart is empty.</p><button class="btn btn--accent" data-act="home">Back to shop</button></section>`;
     return `<section class="wrap checkout">
       <form class="ck" data-form="checkout" novalidate>
@@ -1189,13 +1275,25 @@ window.STORE_CONFIG = (function () {
           <div class="f"><label for="ck-phone">Phone (optional, for delivery updates)</label><input id="ck-phone" name="phone" type="tel" autocomplete="tel" value="${esc(d.phone)}"></div></fieldset>
         <fieldset><legend>Delivery</legend><div class="ships">${C.shipping.map((s) => { const free = s.id === "standard" && t.subtotal - t.discount >= C.freeShipOver; return `<label class="shipopt"><input type="radio" name="ship" id="ck-ship-${s.id}" value="${s.id}" ${t.method === s.id ? "checked" : ""}><span><b>${esc(s.label)}</b><em>${esc(s.eta)}</em></span><strong>${free ? "Free" : money(s.price)}</strong></label>`; }).join("")}</div></fieldset>
         <div class="f"><label for="ck-notes">Gift note or delivery instructions (optional)</label><textarea id="ck-notes" name="notes" rows="2" maxlength="300">${esc(d.notes)}</textarea></div>
-        <fieldset><legend>Payment</legend><div class="paybox"><p><b>Secure payment</b></p><p>Card, Apple Pay and Google Pay appear here once the payment provider is connected. Your order is saved and stock is reserved when you place it.</p></div></fieldset>
+        <fieldset><legend>Payment</legend><p class="pm__sub">All transactions are secure and encrypted.</p>
+          <div class="pm" data-cc="${ccBrand((P.num || "").replace(/\D/g, ""))}">
+            <label class="pm__opt"><input type="radio" name="pay" id="pm-card" value="card" checked><b>Credit card</b><span class="cards">${Object.keys(CC).map((b) => `<i class="cc cc--${b}">${CC[b]}</i>`).join("")}</span></label>
+            <div class="pm__body">
+              <div class="f pm__ic"><label for="cc-num">Card number</label><input id="cc-num" data-pay="num" inputmode="numeric" autocomplete="cc-number" placeholder="1234 1234 1234 1234" value="${esc(P.num)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+              <div class="grid2 keep2"><div class="f"><label for="cc-exp">Expiration (MM / YY)</label><input id="cc-exp" data-pay="exp" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY" value="${esc(P.exp)}"></div>
+                <div class="f pm__ic"><label for="cc-cvc">Security code</label><input id="cc-cvc" data-pay="cvc" inputmode="numeric" autocomplete="cc-csc" placeholder="CVC" value="${esc(P.cvc)}"><span class="pm__q" title="3 digits on the back of your card (4 on the front for Amex)" aria-hidden="true">?</span></div></div>
+              <div class="f"><label for="cc-name">Name on card</label><input id="cc-name" data-pay="name" autocomplete="cc-name" value="${esc(P.name)}"></div>
+              <label class="check"><input type="checkbox" id="cc-same" data-pay="same" ${P.same === false ? "" : "checked"}> Use shipping address as billing address</label>
+              <div class="pm__bill"><div class="f"><label for="bill-a1">Billing address</label><input id="bill-a1" data-pay="a1" autocomplete="billing address-line1" value="${esc(P.a1)}"></div>
+                <div class="grid2"><div class="f"><label for="bill-city">City</label><input id="bill-city" data-pay="city" autocomplete="billing address-level2" value="${esc(P.city)}"></div><div class="f"><label for="bill-zip">ZIP</label><input id="bill-zip" data-pay="zip" inputmode="numeric" autocomplete="billing postal-code" value="${esc(P.zip)}"></div></div></div>
+            </div>          </div></fieldset>
+        ${S.cart.some((l) => l.sub) ? `<div class="f"><label class="check"><input id="ck-renew" name="renew" type="checkbox"> I agree my subscription renews every 30 days at ${money(S.cart.filter((l) => l.sub).reduce((s, l) => s + lineUnit(l) * l.qty, 0))} plus tax and shipping until I cancel. Cancel anytime by emailing support@__DOMAIN__.</label></div>` : ""}
         <p class="err" id="ck-err" role="alert" hidden></p>
         <button class="btn btn--accent btn--block" type="submit" id="ck-submit">Place order · ${money(t.total)}</button>
-        <p class="fine">Sales tax is calculated at payment. By placing an order you agree to our <button type="button" class="link" data-act="policy" data-id="terms">Terms</button> and <button type="button" class="link" data-act="policy" data-id="returns">Refund policy</button>.</p>
+        <p class="fine">Sales tax is calculated at payment. By placing an order you agree to our <a class="link" href="/terms" target="_blank">Terms of Service</a>, <a class="link" href="/refund-policy" target="_blank">Refund Policy</a> and <a class="link" href="/privacy" target="_blank">Privacy Policy</a>. Questions? <a class="link" href="mailto:support@__DOMAIN__">support@__DOMAIN__</a></p>
       </form>
       <aside class="ck-sum"><h2>Order summary</h2>
-        <ul class="lines lines--sum">${S.cart.map((l) => { const v = variantBy(l.sku); return `<li class="line"><div class="line__art"><img src="${img(C.packImg(v))}" alt=""><span class="badge">${l.qty}</span></div><div class="line__info"><b>${esc(flavorBy(v.flavor).name)}</b><span>${esc(sizeBy(v.size).label)}${l.sub ? " · Subscription" : ""}</span></div><div class="line__price">${money(lineUnit(l) * l.qty)}</div></li>`; }).join("")}</ul>
+        <ul class="lines lines--sum">${S.cart.map((l) => { const v = variantBy(l.sku); return `<li class="line"><div class="line__art"><img src="${thumb(v)}" alt=""><span class="badge">${l.qty}</span></div><div class="line__info"><b>${esc(flavorBy(v.flavor).name)}</b><span>${esc(sizeBy(v.size).label)}${l.sub ? " · Subscription" : ""}</span></div><div class="line__price">${money(lineUnit(l) * l.qty)}</div></li>`; }).join("")}</ul>
         ${t.saved > 0 ? `<p class="saved">You're saving ${money(t.saved)}</p>` : ""}<dl class="sum"><dt>Subtotal</dt><dd>${money(t.subtotal)}</dd>${t.bundle ? `<dt>Stack &amp; save (${t.bundlePct}%)</dt><dd>−${money(t.bundle)}</dd>` : ""}${t.discount ? `<dt>Discount (${esc(S.promo.code)})</dt><dd>−${money(t.discount)}</dd>` : ""}<dt>Shipping</dt><dd>${t.shipping ? money(t.shipping) : "Free"}</dd><dt class="tot">Total</dt><dd class="tot">${money(t.total)}</dd></dl>
         <ul class="trust trust--col"><li>${ICON.shield}<span>30-day money-back guarantee</span></li><li>${ICON.repeat}<span>Skip or cancel subscriptions anytime</span></li></ul>
       </aside></section>`;
@@ -1203,10 +1301,10 @@ window.STORE_CONFIG = (function () {
 
   function vConfirm() {
     const o = S.lastOrder; if (!o) return vHome();
-    return `<section class="wrap narrow confirm"><p class="eyebrow">Order ${esc(o.id)}</p><h1 class="h2">${esc(C.copy.thanks)}</h1>
-      <p class="lede">We saved your order and reserved your ${esc(C.productShort)}. A confirmation goes to <b>${esc(o.email)}</b> once payment is complete.</p>
-      <dl class="sum">${o.items.map((it) => { const v = variantBy(it.sku); return `<dt>${it.qty} × ${esc(flavorBy(v.flavor).name)}, ${esc(sizeBy(v.size).label)}</dt><dd>${money(it.unit * it.qty)}</dd>`; }).join("")}<dt>Shipping</dt><dd>${o.totals.shipping ? money(o.totals.shipping) : "Free"}</dd><dt class="tot">Total</dt><dd class="tot">${money(o.totals.total)}</dd></dl>
-      <p class="pill pill--warn">Awaiting payment</p><div class="row-start"><button class="btn btn--accent" data-act="track" data-id="${esc(o.id)}" data-email="${esc(o.email)}">Track this order</button><button class="btn btn--ghost" data-act="home">Back to the shop</button></div></section>`;
+    return `<section class="wrap narrow confirm"><p class="eyebrow">Order ${esc(o.id)}</p><h1 class="h2">${esc(C.copy.soldOut)}</h1>
+      <p class="lede">Sorry, the items you ordered are out of stock right now, so we couldn't complete your order. <b>Your card has not been charged.</b> We saved your request and will contact you at <b>${esc(o.email)}</b>.</p>
+      <p class="eyebrow">Your order</p><dl class="sum">${o.items.map((it) => { const v = variantBy(it.sku); return `<dt>${it.qty} × ${esc(flavorBy(v.flavor).name)}, ${esc(sizeBy(v.size).label)}</dt><dd>${money(it.unit * it.qty)}</dd>`; }).join("")}<dt>Shipping</dt><dd>${o.totals.shipping ? money(o.totals.shipping) : "Free"}</dd><dt class="tot">Total</dt><dd class="tot">${money(o.totals.total)}</dd></dl>
+      <p class="pill pill--bad">Out of stock · not charged</p><div class="row-start"><button class="btn btn--accent" data-act="home">Back to the shop</button><a class="btn btn--ghost" href="/contact">Contact us</a></div></section>`;
   }
   function vTrack() {
     const p = S.track || {}, o = p.result;
@@ -1222,7 +1320,13 @@ window.STORE_CONFIG = (function () {
       <button class="link" data-act="home">← Back to the shop</button></section>`;
   }
 
-  const STATUS = { awaiting_payment: "Awaiting payment", paid: "Paid", shipped: "Shipped", delivered: "Delivered", cancelled: "Cancelled" };
+  const STATUS = { awaiting_payment: "Unpaid", paid: "Paid", shipped: "Shipped", delivered: "Delivered", cancelled: "Cancelled" };
+  // labelled lines; ad names from Meta often have no spaces, so they wrap anywhere
+  const srcHTML = (a) => {
+    if (!a || !Object.keys(a).length) return `<span class="muted">Direct / unknown</span>`;
+    const rows = [["Campaign", a.campaign_name || a.utm_campaign], ["Ad set", a.adset_name], ["Ad", a.ad_name || a.utm_content, true], ["Placement", a.network_channel], ["Source", a.source || a.utm_source]].filter((r) => r[1]);
+    return `<dl class="src">${rows.map(([l, v, b]) => `<dt>${l}</dt><dd>${b ? `<b>${esc(v)}</b>` : esc(v)}</dd>`).join("")}</dl>`;
+  };
   function vAdmin() {
     if (Store.mode === "api" && !Store.canEdit) return `<section class="wrap narrow"><h1 class="h2">Store admin</h1>
       <form class="adm-login" data-form="login" novalidate><div class="f"><label for="adm-token">Admin key</label><input id="adm-token" name="token" type="password" autocomplete="current-password" required></div><button class="btn btn--accent" type="submit">Sign in</button></form>
@@ -1240,23 +1344,24 @@ window.STORE_CONFIG = (function () {
       <div class="tablewrap"><table class="tbl"><thead><tr><th>Product</th><th>SKU</th><th class="num">Price</th><th class="num">In stock</th><th class="num">Low at</th><th class="num">Sold</th><th class="num">Waitlist</th><th>Status</th><th></th></tr></thead><tbody>
       ${skus.map((sku) => { const v = variantBy(sku), p = inv[sku], e = S.edits[sku] || {}, st = p ? (e.stock ?? p.stock) : null;
         const pill = !p ? `<span class="pill">No record</span>` : p.stock <= 0 ? `<span class="pill pill--bad">Sold out</span>` : p.stock <= (p.lowStockAt ?? 25) ? `<span class="pill pill--warn">Low</span>` : `<span class="pill pill--ok">OK</span>`;
-        return `<tr data-sku="${sku}"><td><div class="tbl__prod"><img src="${img(C.packImg(v))}" alt=""><div><b>${esc(flavorBy(v.flavor).name)}</b><br><span class="muted">${esc(sizeBy(v.size).label)}</span></div></div></td><td class="mono">${sku}</td>
+        return `<tr data-sku="${sku}"><td><div class="tbl__prod"><img src="${thumb(v)}" alt=""><div><b>${esc(flavorBy(v.flavor).name)}</b><br><span class="muted">${esc(sizeBy(v.size).label)}</span></div></div></td><td class="mono">${sku}</td>
         <td class="num"><input class="in in--num" id="pr-${sku}" type="number" step="0.01" min="0" value="${p ? (e.price ?? p.price) : v.price}" data-edit="price" ${p ? "" : "disabled"}></td>
         <td class="num"><div class="stepper"><button data-act="stk" data-d="-1" ${p ? "" : "disabled"} aria-label="Remove one">−</button><input class="in in--num" id="st-${sku}" type="number" step="1" min="0" value="${st ?? ""}" data-edit="stock" ${p ? "" : "disabled"}><button data-act="stk" data-d="1" ${p ? "" : "disabled"} aria-label="Add one">+</button></div></td>
         <td class="num"><input class="in in--num in--sm" id="lo-${sku}" type="number" step="1" min="0" value="${p ? (e.lowStockAt ?? p.lowStockAt ?? 25) : ""}" data-edit="lowStockAt" ${p ? "" : "disabled"}></td>
         <td class="num mono">${p ? p.sold || 0 : "—"}</td><td class="num mono">${waitlist(sku)}</td><td>${pill}</td>
         <td><button class="btn btn--sm ${Object.keys(e).length ? "btn--accent" : "btn--ghost"}" data-act="save-sku" ${Object.keys(e).length ? "" : "disabled"}>Save</button></td></tr>`; }).join("")}
       </tbody></table></div><p class="fine">Stock goes down when an order is placed and comes back when you cancel it. The waitlist shows how many people asked to be emailed when a sold-out SKU returns.</p>`;
-    else if (tab === "orders") body = `<div class="tablewrap"><table class="tbl"><thead><tr><th>Order</th><th>Date</th><th>Customer</th><th>Items</th><th>Ship to</th><th class="num">Total</th><th>Status</th></tr></thead><tbody>
-      ${S.orders.length ? S.orders.map((o) => `<tr><td class="mono">${esc(o.id)}</td><td class="mono">${esc((o.createdAt || "").replace("T", " ").slice(0, 16))}</td><td>${esc(o.name)}<br><span class="muted">${esc(o.email)}</span></td>
-        <td>${o.items.map((it) => { const v = variantBy(it.sku); return v ? `${it.qty}× ${esc(flavorBy(v.flavor).name)} ${esc(sizeBy(v.size).short)}${it.sub ? " (sub)" : ""}` : esc(it.sku); }).join("<br>")}${o.notes ? `<br><em class="muted">“${esc(o.notes)}”</em>` : ""}</td>
-        <td>${esc(o.address?.city)}, ${esc(o.address?.state)} ${esc(o.address?.zip)}<br><span class="muted">${esc(o.shipping?.method)}</span></td><td class="num mono">${money(o.totals?.total)}</td>
-        <td><select class="in" id="os-${esc(o.id)}" data-act-change="ostatus" data-id="${esc(o.id)}" ${o.status === "cancelled" ? "disabled" : ""}>${Object.entries(STATUS).map(([k, l]) => `<option value="${k}"${o.status === k ? " selected" : ""}>${l}</option>`).join("")}</select>${["shipped", "delivered"].includes(o.status) ? `<br><button class="link" data-act="rev-req" data-id="${esc(o.id)}">Copy review request</button>` : ""}</td></tr>`).join("")
-        : `<tr><td colspan="7" class="empty">No orders yet. Orders placed on the shop appear here.</td></tr>`}</tbody></table></div>
+    else if (tab === "orders") body = `<div class="tablewrap"><table class="tbl"><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Ship to</th><th>Source</th><th>Promo</th><th class="num">Total</th><th>Status</th><th></th></tr></thead><tbody>
+      ${S.orders.length ? S.orders.map((o) => `<tr><td class="mono">${esc(o.id)}<br><span class="muted">${esc((o.createdAt || "").replace("T", " ").slice(0, 16))}</span></td><td>${esc(o.name)}<br><span class="muted">${esc(o.email)}</span></td>
+        <td class="items">${o.items.map((it) => { const v = variantBy(it.sku); return v ? `${it.qty}× ${esc(flavorBy(v.flavor).name)} ${esc(sizeBy(v.size).short)}${it.sub ? " (sub)" : ""}` : esc(it.sku); }).join("<br>")}${o.notes ? `<br><em class="muted">“${esc(o.notes)}”</em>` : ""}</td>
+        <td>${esc(o.address?.city)}, ${esc(o.address?.state)} ${esc(o.address?.zip)}<br><span class="muted">${esc(o.shipping?.method)}</span></td><td>${srcHTML(o.attr)}</td><td class="mono">${esc(o.promo || "")}</td><td class="num mono">${money(o.totals?.total)}</td>
+        <td><select class="in" id="os-${esc(o.id)}" data-act-change="ostatus" data-id="${esc(o.id)}" ${o.status === "cancelled" ? "disabled" : ""}>${Object.entries(STATUS).map(([k, l]) => `<option value="${k}"${o.status === k ? " selected" : ""}>${l}</option>`).join("")}</select>${["shipped", "delivered"].includes(o.status) ? `<br><button class="link" data-act="rev-req" data-id="${esc(o.id)}">Copy review request</button>` : ""}</td>
+        <td><button class="del" data-act="ord-del" data-id="${esc(o.id)}" aria-label="Delete order ${esc(o.id)}">✕</button></td></tr>`).join("")
+        : `<tr><td colspan="9" class="empty">No orders yet. Orders placed on the shop appear here.</td></tr>`}</tbody></table></div>
       <div class="row-end"><button class="btn btn--ghost btn--sm" data-act="export-orders" ${S.orders.length ? "" : "disabled"}>Export orders CSV</button></div>`;
-    else if (tab === "subs") body = `<div class="tablewrap"><table class="tbl"><thead><tr><th>Email</th><th>Name</th><th>Signed up via</th><th>Waiting for</th><th>Date</th></tr></thead><tbody>
-      ${S.subs.length ? S.subs.map((s) => `<tr><td>${esc(s.email)}</td><td>${esc(s.name || "—")}</td><td>${(s.sources || []).map((x) => `<span class="pill">${esc(x)}</span>`).join(" ")}</td><td class="mono">${(s.restock || []).join(", ") || "—"}</td><td class="mono">${esc((s.createdAt || "").slice(0, 10))}</td></tr>`).join("")
-        : `<tr><td colspan="5" class="empty">No subscribers yet. Emails from the popup, newsletter, checkout and restock alerts land here.</td></tr>`}</tbody></table></div>
+    else if (tab === "subs") body = `<div class="tablewrap"><table class="tbl"><thead><tr><th>Email</th><th>Name</th><th>Signed up via</th><th>Waiting for</th><th>Date</th><th></th></tr></thead><tbody>
+      ${S.subs.length ? S.subs.map((s) => `<tr><td>${esc(s.email)}</td><td>${esc(s.name || "—")}</td><td>${(s.sources || []).map((x) => `<span class="pill">${esc(x)}</span>`).join(" ")}</td><td class="mono">${(s.restock || []).join(", ") || "—"}</td><td class="mono">${esc((s.createdAt || "").slice(0, 10))}</td><td><button class="del" data-act="sub-del" data-id="${esc(s.email)}" aria-label="Delete subscriber ${esc(s.email)}">✕</button></td></tr>`).join("")
+        : `<tr><td colspan="6" class="empty">No subscribers yet. Emails from the popup, newsletter, checkout and restock alerts land here.</td></tr>`}</tbody></table></div>
       <div class="row-end"><button class="btn btn--accent btn--sm" data-act="export-subs" ${S.subs.length ? "" : "disabled"}>Export emails CSV</button></div><p class="fine">CSV columns: email, name, sources, restock_skus, created_at. Imports into Klaviyo, Mailchimp or Shopify Email.</p>`;
     else if (tab === "reviews") body = `<div class="tablewrap"><table class="tbl"><thead><tr><th>Rating</th><th>Review</th><th>Customer</th><th>Status</th><th></th></tr></thead><tbody>
       ${S.allReviews.length ? S.allReviews.map((r) => `<tr><td>${stars(+r.rating || 0)}</td><td>${r.photo ? `<img class="tbl__ph" src="${esc(r.photo)}" alt="">` : ""}<b>${esc(r.title)}</b><br><span class="muted">${esc((r.body || "").slice(0, 220))}</span></td><td>${esc(r.name)}<br><span class="muted">${esc(r.email || "")}</span></td>
@@ -1318,7 +1423,7 @@ window.STORE_CONFIG = (function () {
   function renderSticky() {
     const b = $("#sticky"); if (!b) return;
     const v = curVariant(), unit = priceOf(v.sku) * (S.sel.sub ? 1 - C.subscribePct / 100 : 1), st = stockOf(v.sku), out = S.invLoaded && (st === null || st <= 0);
-    b.innerHTML = `<img src="${img(C.packImg(v))}" alt=""><div><b>${esc(flavorBy(v.flavor).name)}</b><span>${esc(sizeBy(v.size).label)} · ${money(unit)}</span></div>${out ? `<button class="btn btn--ghost btn--sm" data-act="scroll" data-to="shop">Sold out</button>` : `<button class="btn btn--accent btn--sm" data-act="add" data-sku="${v.sku}" ${S.invLoaded ? "" : "disabled"}>Add to cart</button>`}`;
+    b.innerHTML = `<img src="${thumb(v)}" alt=""><div><b>${esc(flavorBy(v.flavor).name)}</b><span>${esc(sizeBy(v.size).label)} · ${money(unit)}</span></div>${out ? `<button class="btn btn--ghost btn--sm" data-act="scroll" data-to="shop">Sold out</button>` : `<button class="btn btn--accent btn--sm" data-act="add" data-sku="${v.sku}" ${S.invLoaded ? "" : "disabled"}>Add to cart</button>`}`;
   }
   let io;
   function bindSticky() {
@@ -1328,7 +1433,16 @@ window.STORE_CONFIG = (function () {
     io = new IntersectionObserver((es) => es.forEach((e) => b.classList.toggle("show", !e.isIntersecting && e.boundingClientRect.top < 0)));
     io.observe(target);
   }
-  function go(view) { S.view = view; render(); window.scrollTo(0, 0); }
+  // Each screen gets its own URL so Clarity heatmaps don't mix home and checkout clicks; admin stays on #admin
+  const URL_VIEWS = ["checkout", "track", "confirm"];
+  const urlFor = (v) => URL_VIEWS.includes(v) ? `/?view=${v}` : v === "admin" ? "/#admin" : "/";
+  function viewFromUrl() { if (location.hash === "#admin") return "admin"; const v = new URLSearchParams(location.search).get("view"); return URL_VIEWS.includes(v) && (v !== "confirm" || S.lastOrder) ? v : "home"; }
+  function go(view, fromHistory) {
+    if (view === "checkout" && S.view !== "checkout" && S.cart.length) px("InitiateCheckout", Object.assign(pxCart(S.cart), { value: totals().total }));
+    S.view = view; if (view === "admin") $("#view").setAttribute("data-clarity-mask", "true"); else $("#view").removeAttribute("data-clarity-mask");
+    if (!fromHistory && location.pathname + location.search + location.hash !== urlFor(view)) history.pushState(null, "", urlFor(view));
+    render(); window.scrollTo(0, 0);
+  }
   let lastFocus = null;
   function openCart() { if (!$("#drawer").classList.contains("open")) lastFocus = document.activeElement; $("#drawer").classList.add("open"); $("#scrim").hidden = false; $("#drawer").setAttribute("aria-hidden", "false"); setTimeout(() => $("#drawer .icon-btn")?.focus(), 60); }
   function closeCart() { if (!$("#drawer").classList.contains("open")) return; $("#drawer").classList.remove("open"); $("#scrim").hidden = true; $("#drawer").setAttribute("aria-hidden", "true"); lastFocus && lastFocus.focus && lastFocus.focus(); }
@@ -1341,6 +1455,7 @@ window.STORE_CONFIG = (function () {
     if (st !== null && want > st) { toast(st - inCart(sku) > 0 ? `Only ${st} available. You can add ${st - inCart(sku)} more.` : "You already have all remaining stock in your cart.", "bad"); return false; }
     const ex = S.cart.find((l) => l.sku === sku && !!l.sub === !!sub);
     if (ex) ex.qty += qty; else S.cart.push({ sku, qty, sub: !!sub });
+    const unit = lineUnit({ sku, sub }); px("AddToCart", Object.assign(pxCart([{ sku, qty, unit }]), { value: +(unit * qty).toFixed(2) }));
     saveCart(); renderChrome(); fly(openCart); return true;
   }
   const csv = (rows) => rows.map((r) => r.map((x) => { const s = String(x ?? ""); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }).join(",")).join("\n");
@@ -1358,8 +1473,8 @@ window.STORE_CONFIG = (function () {
     if (b.tagName === "A") ev.preventDefault();
     if (a === "scroll") { if (S.view !== "home") go("home"); const t = document.getElementById(b.dataset.to); t && t.scrollIntoView({ behavior: "smooth", block: "start" }); }
     else if (a === "home") go("home");
-    else if (a === "flavor") { S.sel.flavor = b.dataset.id; S.sel.img = 0; renderPDP(); }
-    else if (a === "size") { S.sel.size = b.dataset.id; S.sel.img = 0; renderPDP(); }
+    else if (a === "flavor") { S.sel.flavor = b.dataset.id; S.sel.img = 0; renderPDP(); pxView(); }
+    else if (a === "size") { S.sel.size = b.dataset.id; S.sel.img = 0; renderPDP(); pxView(); }
     else if (a === "plan") { S.sel.sub = b.dataset.sub === "1"; renderPDP(); }
     else if (a === "qty") { S.sel.qty = Math.max(1, Math.min(10, S.sel.qty + +b.dataset.d)); renderPDP(); }
     else if (a === "gimg") { S.sel.img = +b.dataset.i; const tr = $("#gal-track"); if (tr) tr.scrollTo({ left: S.sel.img * tr.clientWidth, behavior: "smooth" }); markGal(S.sel.img); }
@@ -1409,9 +1524,16 @@ window.STORE_CONFIG = (function () {
     else if (a === "rev-set") { try { await Store.setReview(b.dataset.id, { status: b.dataset.s }); toast(b.dataset.s === "approved" ? "Review published" : "Review hidden"); } catch (e) { toast("Couldn't update review", "bad"); } }
     else if (a === "rev-ver") { try { await Store.setReview(b.dataset.id, { verified: b.dataset.v === "1" }); } catch (e) { toast("Couldn't update review", "bad"); } }
     else if (a === "rev-del") { if (b.dataset.confirm !== "1") { b.dataset.confirm = "1"; b.textContent = "Click again to delete"; return; } try { await Store.setReview(b.dataset.id, null); toast("Review deleted"); } catch (e) { toast("Couldn't delete review", "bad"); } }
+    else if (a === "ord-del" || a === "sub-del") { if (b.dataset.confirm !== "1") { b.dataset.confirm = "1"; b.classList.add("is-armed"); toast("Click the red ✕ again to delete"); return; }
+      const id = b.dataset.id; b.disabled = true;
+      try {
+        if (a === "ord-del") { const o = S.orders.find((x) => x.id === id); if (o) await Store.deleteOrder(o); S.orders = S.orders.filter((x) => x.id !== id); if (Store.mode === "api") Store._refreshInv(); }
+        else { await Store.deleteSubscriber(id); S.subs = S.subs.filter((x) => x.email !== id); }
+        toast("Deleted"); render();
+      } catch (e) { toast("Couldn't delete", "bad"); b.disabled = false; } }
     else if (a === "photo-rm") { try { await Store.saveProduct(b.dataset.sku, { photoUrl: "" }); toast("Photo removed"); } catch (e) { toast("Couldn't remove photo", "bad"); } }
     else if (a === "export-subs") { const rows = [["email", "name", "sources", "restock_skus", "created_at"], ...S.subs.map((s) => [s.email, s.name || "", (s.sources || []).join("|"), (s.restock || []).join("|"), s.createdAt || ""])]; const r = await Store.exportFile(`${C.key}-subscribers.csv`, csv(rows)); toast(r === "saved" ? "CSV saved" : r === "copied" ? "CSV copied to clipboard" : "Export was cancelled", r === "failed" ? "bad" : ""); }
-    else if (a === "export-orders") { const rows = [["order_id", "created_at", "status", "email", "name", "phone", "address1", "address2", "city", "state", "zip", "shipping_method", "items", "subtotal", "discount", "shipping", "total"], ...S.orders.map((o) => [o.id, o.createdAt, o.status, o.email, o.name, o.phone || "", o.address?.a1, o.address?.a2 || "", o.address?.city, o.address?.state, o.address?.zip, o.shipping?.method, o.items.map((i) => `${i.qty}x${i.sku}${i.sub ? "(sub)" : ""}`).join(" "), o.totals?.subtotal, o.totals?.discount, o.totals?.shipping, o.totals?.total])]; const r = await Store.exportFile(`${C.key}-orders.csv`, csv(rows)); toast(r === "saved" ? "CSV saved" : r === "copied" ? "CSV copied to clipboard" : "Export was cancelled", r === "failed" ? "bad" : ""); }
+    else if (a === "export-orders") { const rows = [["order_id", "created_at", "status", "email", "name", "phone", "address1", "address2", "city", "state", "zip", "shipping_method", "items", "subtotal", "discount", "promo", "shipping", "total", "campaign", "adset", "ad", "placement", "source", "utm_source", "utm_campaign"], ...S.orders.map((o) => [o.id, o.createdAt, o.status, o.email, o.name, o.phone || "", o.address?.a1, o.address?.a2 || "", o.address?.city, o.address?.state, o.address?.zip, o.shipping?.method, o.items.map((i) => `${i.qty}x${i.sku}${i.sub ? "(sub)" : ""}`).join(" "), o.totals?.subtotal, o.totals?.discount, o.promo || "", o.totals?.shipping, o.totals?.total, o.attr?.campaign_name, o.attr?.adset_name, o.attr?.ad_name, o.attr?.network_channel, o.attr?.source, o.attr?.utm_source, o.attr?.utm_campaign])]; const r = await Store.exportFile(`${C.key}-orders.csv`, csv(rows)); toast(r === "saved" ? "CSV saved" : r === "copied" ? "CSV copied to clipboard" : "Export was cancelled", r === "failed" ? "bad" : ""); }
   });
   $("#scrim").addEventListener("click", closeCart);
   $("#scrim2").addEventListener("click", () => { closePopup(true); closeModal(); });
@@ -1431,8 +1553,23 @@ window.STORE_CONFIG = (function () {
     const t = e.target;
     if (t.dataset.edit) { const sku = t.closest("tr").dataset.sku, v = t.value === "" ? 0 : +t.value; markEdit(sku, t.dataset.edit, t.dataset.edit === "price" ? Math.round(v * 100) / 100 : Math.max(0, Math.round(v))); }
     const f = t.closest("form[data-form='checkout']"); if (f && t.name !== "ship") LS.set("ck", formData(f));
+    if (t.dataset.pay) {
+      if (t.id === "cc-num") { const b = ccBrand(t.value.replace(/\D/g, "")), n = t.value.replace(/\D/g, "").slice(0, b === "amex" ? 15 : 19); t.value = b === "amex" ? [n.slice(0, 4), n.slice(4, 10), n.slice(10)].filter(Boolean).join(" ") : n.replace(/(\d{4})(?=\d)/g, "$1 "); t.closest(".pm").dataset.cc = b; }
+      if (t.id === "cc-exp") { const n = t.value.replace(/\D/g, "").slice(0, 4); t.value = n.length > 2 ? n.slice(0, 2) + " / " + n.slice(2) : n; }
+      if (t.id === "cc-cvc") t.value = t.value.replace(/\D/g, "").slice(0, 4);
+      S.pay[t.dataset.pay] = t.type === "checkbox" ? t.checked : t.value;
+    }
     if (t.dataset.faq !== undefined) { const q = t.value.trim().toLowerCase(); let n = 0; $$("#faq-list .faq__item").forEach((d) => { const hit = !q || d.textContent.toLowerCase().includes(q); d.hidden = !hit; if (hit) n++; if (q && hit) d.open = true; }); $("#faq-none").hidden = n > 0; }
+    if (t.type === "range") t.style.setProperty("--p", ((t.value - t.min) / (t.max - t.min)) * 100 + "%");
     if (t.dataset.tool) { const k = t.dataset.tool; S.tool[k] = t.type === "checkbox" ? t.checked : t.type === "range" ? +t.value : t.value; const box = t.closest(".tool"); if (box) { const out = box.querySelector("[data-out]"); if (out) out.outerHTML = box.id === "tool-save" ? vSavingsOut() : vToolOut(); const lab = box.querySelector(`[data-lab="${k}"]`); if (lab) lab.textContent = t.value; } }
+  });
+  // touch: jump to where the finger lands on the track and keep dragging (iOS otherwise only drags from the thumb)
+  document.addEventListener("pointerdown", (e) => {
+    const r = e.target; if (r.type !== "range" || e.pointerType === "mouse") return;
+    const set = (x) => { const b = r.getBoundingClientRect(), f = Math.min(1, Math.max(0, (x - b.left - 16) / (b.width - 32))), v = +r.min + Math.round((f * (r.max - r.min)) / r.step) * r.step;
+      if (+r.value !== v) { r.value = v; r.dispatchEvent(new Event("input", { bubbles: true })); } };
+    e.preventDefault(); set(e.clientX); r.setPointerCapture(e.pointerId);
+    r.onpointermove = (ev) => set(ev.clientX); r.onpointerup = r.onpointercancel = () => (r.onpointermove = null);
   });
   document.addEventListener("change", async (e) => {
     const t = e.target;
@@ -1450,9 +1587,9 @@ window.STORE_CONFIG = (function () {
     if (kind === "news" || kind === "popup") {
       const em = f.email.value; if (!emailOk(em)) { toast("Enter a valid email address.", "bad"); f.email.focus(); return; }
       const btn = f.querySelector("button"); btn && (btn.disabled = true);
-      try { await Store.addSubscriber({ email: em, source: kind === "popup" ? "popup" : "newsletter" }); } catch (er) { toast("Couldn't sign you up. Try again.", "bad"); btn && (btn.disabled = false); return; }
-      LS.set("subscribed", true); if (!S.promo) { S.promo = { code: C.promo.code, pct: C.promo.pct }; saveCart(); }
-      const msg = `<div class="thanks"><p><b>You're in.</b> Code <span class="code">${esc(C.promo.code)}</span> is applied to your cart: ${C.promo.pct}% off your first order.</p></div>`;
+      try { await Store.addSubscriber({ email: em, source: kind === "popup" ? "popup" : "newsletter", code: C.promo.code }); } catch (er) { toast("Couldn't sign you up. Try again.", "bad"); btn && (btn.disabled = false); return; }
+      LS.set("subscribed", true); const won = applyBest(C.promo);
+      const msg = `<div class="thanks"><p><b>You're in.</b> ${won ? `Code <span class="code">${esc(C.promo.code)}</span> is applied to your cart: ${C.promo.pct}% off your first order.` : keptMsg()} We also emailed it to you.</p></div>`;
       if (kind === "popup") $("#popup-body").innerHTML = msg + `<button class="btn btn--accent btn--block" data-act="popup-close">Start shopping</button>`; else f.outerHTML = msg;
       renderChrome();
     } else if (kind === "notify") {
@@ -1461,7 +1598,9 @@ window.STORE_CONFIG = (function () {
     } else if (kind === "promo") {
       const code = (f.code.value || "").trim().toUpperCase(), hit = (C.codes || [C.promo]).find((c) => c.code === code);
       if (!hit) { toast(code ? `“${code}” isn't a valid code.` : "Enter a code.", "bad"); return; }
-      S.promo = { code: hit.code, pct: hit.pct }; saveCart(); renderChrome(); toast(`${hit.code} applied`);
+      if (S.promo && S.promo.code === hit.code) { toast(`${hit.code} is already applied`); return; }
+      if (!applyBest(hit)) { toast(`${S.promo.code} (−${S.promo.pct}%) already gives more, so it stays applied.`); return; }
+      renderChrome(); toast(`${hit.code} applied`);
     } else if (kind === "review") {
       const d = Object.fromEntries(new FormData(f));
       if (!d.name?.trim() || !d.title?.trim() || !d.body?.trim() || !emailOk(d.email)) { toast("Fill in your name, headline, review and a valid email.", "bad"); return; }
@@ -1473,9 +1612,9 @@ window.STORE_CONFIG = (function () {
     } else if (kind === "wheel") { await spinWheel(f);
     } else if (kind === "quizmail") {
       const em = f.email.value; if (!emailOk(em)) { toast("Enter a valid email address.", "bad"); return; }
-      const r = quizResult(); try { await Store.addSubscriber({ email: em, source: "quiz", sku: null }); } catch (e) {}
-      LS.set("subscribed", true); if (!S.promo) { S.promo = { code: C.promo.code, pct: C.promo.pct }; saveCart(); renderChrome(); }
-      f.outerHTML = `<p class="thanks">Sent. Your match is ${esc(flavorBy(r.fl).name)}, and code <span class="code">${esc(C.promo.code)}</span> is applied to your cart.</p>`;
+      const r = quizResult(); try { await Store.addSubscriber({ email: em, source: "quiz", sku: null, code: C.promo.code }); } catch (e) {}
+      LS.set("subscribed", true); const won = applyBest(C.promo); if (won) renderChrome();
+      f.outerHTML = `<p class="thanks">Sent. Your match is ${esc(flavorBy(r.fl).name)}. ${won ? `Code <span class="code">${esc(C.promo.code)}</span> is applied to your cart.` : keptMsg()}</p>`;
     } else if (kind === "track") { const d = Object.fromEntries(new FormData(f)); await doTrack(d.id, d.email);
     } else if (kind === "checkout") await submitCheckout(f);
   });
@@ -1497,13 +1636,27 @@ window.STORE_CONFIG = (function () {
     if (!d.city?.trim()) bad.push(["ck-city", "city"]);
     if (!d.state) bad.push(["ck-state", "state"]);
     if (!/^\d{5}(-\d{4})?$/.test(d.zip || "")) bad.push(["ck-zip", "a 5-digit ZIP"]);
+    if ($("#ck-renew") && !$("#ck-renew").checked) bad.push(["ck-renew", "your agreement to the subscription renewal"]);
+    if (d.pay !== "paypal") {
+      const P = S.pay, n = (P.num || "").replace(/\D/g, ""), amex = ccBrand(n) === "amex", ex = /^(\d{2}) \/ (\d{2})$/.exec(P.exp || ""), now = new Date();
+      if (n.length < (amex ? 15 : 13) || !luhn(n)) bad.push(["cc-num", "a valid card number"]);
+      if (!ex || +ex[1] < 1 || +ex[1] > 12 || (2000 + +ex[2]) * 12 + +ex[1] < now.getFullYear() * 12 + now.getMonth() + 1) bad.push(["cc-exp", "a valid expiration date"]);
+      if (!(amex ? /^\d{4}$/ : /^\d{3}$/).test(P.cvc || "")) bad.push(["cc-cvc", `the ${amex ? 4 : 3}-digit security code`]);
+      if (!(P.name || "").trim()) bad.push(["cc-name", "the name on card"]);
+      if (P.same === false) {
+        if (!(P.a1 || "").trim()) bad.push(["bill-a1", "billing address"]);
+        if (!(P.city || "").trim()) bad.push(["bill-city", "billing city"]);
+        if (!/^\d{5}(-\d{4})?$/.test(P.zip || "")) bad.push(["bill-zip", "a 5-digit billing ZIP"]);
+      }
+    }
     $$(".ck .f").forEach((x) => x.classList.remove("is-bad"));
     if (bad.length) { bad.forEach(([id]) => $("#" + id).closest(".f")?.classList.add("is-bad")); err.textContent = "Add " + bad.map((x) => x[1]).join(", ") + "."; err.hidden = false; $("#" + bad[0][0]).focus(); return; }
     const t = totals(d.ship), btn = $("#ck-submit"); btn.disabled = true; btn.textContent = "Reserving stock…";
+    px("AddPaymentInfo", Object.assign(pxCart(S.cart), { value: t.total }));
     const order = { email: d.email.trim().toLowerCase(), name: `${d.first.trim()} ${d.last.trim()}`, phone: d.phone || "",
       address: { a1: d.a1.trim(), a2: (d.a2 || "").trim(), city: d.city.trim(), state: d.state, zip: d.zip, country: "US" },
       shipping: { method: t.method, price: t.shipping }, items: S.cart.map((l) => ({ sku: l.sku, qty: l.qty, unit: +lineUnit(l).toFixed(2), sub: !!l.sub })),
-      promo: S.promo ? S.promo.code : null, totals: t, marketing: d.marketing, notes: (d.notes || "").trim().slice(0, 300) };
+      promo: S.promo ? S.promo.code : null, totals: t, marketing: d.marketing, notes: (d.notes || "").trim().slice(0, 300), attr: attr() };
     let r; try { r = await Store.placeOrder(order); } catch (e) { r = { ok: false, error: "network" }; }
     if (!r.ok) {
       btn.disabled = false; btn.textContent = `Place order · ${money(t.total)}`;
@@ -1513,7 +1666,8 @@ window.STORE_CONFIG = (function () {
       err.hidden = false; return;
     }
     if (r.payUrl) { location.href = r.payUrl; return; } // payment provider redirect (self-hosted)
-    S.lastOrder = r.order; S.cart = []; S.promo = null; saveCart(); go("confirm"); confetti();
+    px("Purchase", Object.assign(pxCart(r.order.items), { value: r.order.totals.total }), r.order.id);
+    S.lastOrder = r.order; S.cart = []; S.promo = null; S.pay = {}; saveCart(); go("confirm");
   }
 
   /* ---------------- v4 features ---------------- */
@@ -1559,7 +1713,7 @@ window.STORE_CONFIG = (function () {
     const Q = C.quiz, st = S.quiz;
     if (st.step >= Q.length) {
       const r = quizResult(), v = C.variants.find((x) => x.flavor === r.fl && x.size === r.z), f = flavorBy(r.fl);
-      return `<div class="quiz"><p class="eyebrow">Your match</p><div class="quiz__res" style="--qc:${esc(f.color || "#eee")}"><img src="${img(C.packImg(v))}" alt=""><div><h2>${esc(f.name)}</h2><p class="muted">${esc(f.desc || "")}</p>
+      return `<div class="quiz"><p class="eyebrow">Your match</p><div class="quiz__res" style="--qc:${esc(f.color || "#eee")}"><img src="${thumb(v)}" alt=""><div><h2>${esc(f.name)}</h2><p class="muted">${esc(f.desc || "")}</p>
         <ul class="buy__pts"><li>${ICON.check}<span>${esc(sizeBy(r.z).label)}</span></li><li>${ICON.check}<span>${r.p ? `Subscribe &amp; save ${C.subscribePct}%, delivered ${esc(C.subscribeEvery)}` : "One-time purchase"}</span></li></ul>
         <p class="quiz__price">${money(lineUnit({ sku: v.sku, sub: r.p }))}${r.p ? ` <s>${money(priceOf(v.sku))}</s>` : ""}</p></div></div>
         <div class="row-start"><button class="btn btn--accent" data-act="quiz-add">Add my match to cart</button><button class="btn btn--ghost" data-act="quiz-restart">Retake quiz</button></div>
@@ -1579,13 +1733,13 @@ window.STORE_CONFIG = (function () {
     return `<section class="intro"><div class="wrap intro__in"><div class="intro__copy"><p class="eyebrow">${esc(I.eyebrow)}</p><h1 class="intro__h">${I.title}</h1><p class="lede">${esc(I.sub)}</p>
       <div class="row-start"><button class="btn btn--accent" data-act="scroll" data-to="shop">${esc(I.cta)}</button>${C.quiz ? `<button class="btn btn--ghost" data-act="quiz">Find your flavor</button>` : ""}</div>
       <ul class="intro__facts">${I.facts.map((x) => `<li><b>${esc(x[0])}</b><span>${esc(x[1])}</span></li>`).join("")}</ul></div>
-      <div class="intro__img"><img src="${img(I.img)}" alt="${esc(I.alt)}" width="2200" height="1300" fetchpriority="high"></div></div></section>`;
+      <div class="intro__img"><img src="${img(I.img)}" alt="${esc(I.alt)}" width="1600" height="1200" fetchpriority="high"></div></div></section>`;
   }
   function vDaily() {
     const T = S.tool;
     return `<p class="tool__k">Pouch planner</p><h3>How many cans a month?</h3>
-      <div class="f"><label for="tl-pd">Pouches a day: <b data-lab="perDay">${T.perDay}</b></label><input id="tl-pd" type="range" min="1" max="${C.daily.max}" step="1" value="${T.perDay}" data-tool="perDay"></div>
-      <div class="f"><label for="tl-dw">Days a week: <b data-lab="days">${T.days}</b></label><input id="tl-dw" type="range" min="1" max="7" step="1" value="${T.days}" data-tool="days"></div>${dailyOut()}`;
+      <div class="f"><label for="tl-pd">Pouches a day: <b data-lab="perDay">${T.perDay}</b></label><input id="tl-pd" type="range" min="1" max="${C.daily.max}" step="1" value="${T.perDay}" ${rp(T.perDay, 1, C.daily.max)} data-tool="perDay"></div>
+      <div class="f"><label for="tl-dw">Days a week: <b data-lab="days">${T.days}</b></label><input id="tl-dw" type="range" min="1" max="7" step="1" value="${T.days}" ${rp(T.days, 1, 7)} data-tool="days"></div>${dailyOut()}`;
   }
   function dailyOut() {
     const T = S.tool, per = C.daily.perCan, month = Math.round(T.perDay * T.days * 4.3), cans = Math.max(1, Math.ceil(month / per));
@@ -1630,10 +1784,10 @@ window.STORE_CONFIG = (function () {
   function vSweat() {
     const T = S.tool;
     return `<p class="tool__k">Sweat check</p><h3>How many should you pack?</h3>
-      <div class="f"><label for="tl-min">Activity: <b data-lab="min">${T.min}</b> min</label><input id="tl-min" type="range" min="15" max="240" step="15" value="${T.min}" data-tool="min"></div>
+      <div class="f"><label for="tl-min">Activity: <b data-lab="min">${T.min}</b> min</label><input id="tl-min" type="range" min="15" max="240" step="15" value="${T.min}" ${rp(T.min, 15, 240)} data-tool="min"></div>
       <div class="seg2" role="group" aria-label="Intensity">${["light", "moderate", "hard"].map((k) => `<button class="${T.int === k ? "is-on" : ""}" data-act="tool-int" data-id="${k}">${k[0].toUpperCase() + k.slice(1)}</button>`).join("")}</div>
       <label class="check"><input id="tl-hot" type="checkbox" data-tool="hot" ${T.hot ? "checked" : ""}> Hot or humid (above 80°F)</label>
-      <div class="f"><label for="tl-wk">Sessions per week: <b data-lab="weekly">${T.weekly}</b></label><input id="tl-wk" type="range" min="1" max="7" step="1" value="${T.weekly}" data-tool="weekly"></div>${sweatOut()}`;
+      <div class="f"><label for="tl-wk">Sessions per week: <b data-lab="weekly">${T.weekly}</b></label><input id="tl-wk" type="range" min="1" max="7" step="1" value="${T.weekly}" ${rp(T.weekly, 1, 7)} data-tool="weekly"></div>${sweatOut()}`;
   }
   function sweatOut() {
     const T = S.tool, rate = { light: .5, moderate: .9, hard: 1.3 }[T.int], liters = rate * (T.hot ? 1.3 : 1) * (T.min / 60), sodium = liters * 900;
@@ -1646,7 +1800,7 @@ window.STORE_CONFIG = (function () {
     const T = S.tool;
     return `<p class="tool__k">Savings calculator</p><h3>What Subscribe &amp; save is worth</h3>
       <div class="f"><label for="sv-size">Size</label><select id="sv-size" data-tool="size">${C.sizes.map((z) => `<option value="${z.id}"${(T.size || S.sel.size) === z.id ? " selected" : ""}>${esc(z.label)}</option>`).join("")}</select></div>
-      <div class="f"><label for="sv-m">Over <b data-lab="months">${T.months}</b> months</label><input id="sv-m" type="range" min="1" max="12" step="1" value="${T.months}" data-tool="months"></div>${vSavingsOut()}`;
+      <div class="f"><label for="sv-m">Over <b data-lab="months">${T.months}</b> months</label><input id="sv-m" type="range" min="1" max="12" step="1" value="${T.months}" ${rp(T.months, 1, 12)} data-tool="months"></div>${vSavingsOut()}`;
   }
   function vSavingsOut() {
     const T = S.tool, z = sizeBy(T.size || S.sel.size), v = C.variants.find((x) => x.flavor === S.sel.flavor && x.size === z.id), units = Math.ceil(T.months / (z.months || 1));
@@ -1668,14 +1822,14 @@ window.STORE_CONFIG = (function () {
   async function spinWheel(f) {
     const em = f.email.value; if (!emailOk(em)) { toast("Enter a valid email address.", "bad"); f.email.focus(); return; }
     f.querySelector("button").disabled = true;
-    try { await Store.addSubscriber({ email: em, source: "wheel" }); } catch (e) { toast("Couldn't save your email. Try again.", "bad"); f.querySelector("button").disabled = false; return; }
     const W = C.wheel, n = W.length, seg = 360 / n, k = Math.floor(Math.random() * n), prize = W[k];
+    try { await Store.addSubscriber({ email: em, source: "wheel", code: prize.code }); } catch (e) { toast("Couldn't save your email. Try again.", "bad"); f.querySelector("button").disabled = false; return; }
     const deg = 360 * 6 + (360 - (k * seg + seg / 2)) + (Math.random() - .5) * seg * .6, wh = $("#wheel");
     wh.style.transition = reduced() ? "none" : "transform 4.2s cubic-bezier(.12,.7,.18,1)"; wh.style.transform = `rotate(${deg}deg)`;
     LS.set("wheelSpun", true); LS.set("subscribed", true);
     setTimeout(() => {
-      S.promo = { code: prize.code, pct: prize.pct }; saveCart(); renderChrome(); confetti();
-      $("#wheel-body").innerHTML = `<p class="eyebrow">You won</p><p class="popup__big">${esc(prize.label)}</p><p>Code <span class="code">${esc(prize.code)}</span> is applied to your cart.</p><button class="btn btn--accent btn--block" data-act="popup-close">Start shopping</button>`;
+      const won = applyBest(prize); renderChrome(); confetti();
+      $("#wheel-body").innerHTML = `<p class="eyebrow">You won</p><p class="popup__big">${esc(prize.label)}</p><p>${won ? `Code <span class="code">${esc(prize.code)}</span> is applied to your cart.` : keptMsg()} We also emailed it to you.</p><button class="btn btn--accent btn--block" data-act="popup-close">Start shopping</button>`;
     }, reduced() ? 200 : 4400);
   }
 
@@ -1705,7 +1859,7 @@ window.STORE_CONFIG = (function () {
     }, () => { S.invLoaded = true; S.inv = S.inv || {}; renderPDP(); });
     Store.watchPublicReviews((l) => { S.reviews = l; if (S.view === "home" && !editing()) { renderReviews(); renderPDP(); } });
     if (Store.canEdit) startAdminFeeds();
-    if (location.hash === "#admin") go("admin");
+    const v0 = viewFromUrl(); if (v0 !== "home") go(v0, true); else { if (location.search) history.replaceState(null, "", "/"); pxView(); }
     window.addEventListener("hashchange", () => { if (location.hash === "#admin") go("admin"); });
     renderChrome();
     const t0 = Date.now(); let fired = false; const fire = () => { if (fired || $("#drawer").classList.contains("open") || S.view !== "home") return; fired = true; openPopup(); };

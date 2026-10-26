@@ -1,0 +1,24 @@
+@font-face{font-family:"National Park";src:url(../fonts/NationalPark-Bold.woff2) format("woff2");font-weight:600 800;font-display:swap}
+@font-face{font-family:"Work Sans";src:url(../fonts/WorkSans-Regular.woff2) format("woff2");font-weight:300 500;font-display:swap}
+@font-face{font-family:"Work Sans";src:url(../fonts/WorkSans-Bold.woff2) format("woff2");font-weight:600 800;font-display:swap}
+:root{color-scheme:light;--bg:#FFFCF6;--ink:#1F3A2E;--muted:#6B7466;--line:#E8DCC8;--accent:#C2701E;--accent-text:#A65D14}
+body{font:16px/1.6 "Work Sans",system-ui,sans-serif}
+.logo{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink)}
+.logo__mark{width:19px;height:22px;background:var(--accent);clip-path:polygon(50% 0,62% 22%,80% 14%,74% 38%,100% 40%,82% 56%,92% 70%,62% 66%,56% 100%,44% 100%,38% 66%,8% 70%,18% 56%,0 40%,26% 38%,20% 14%,38% 22%)}
+.logo__word{font:700 1.45rem/1 "National Park",Georgia,serif;letter-spacing:-.02em}
+h1{font:700 clamp(1.6rem,4.5vw,2.4rem)/1.2 "National Park",Georgia,serif;letter-spacing:-.015em;margin:0 0 .8rem}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+main.wrap{padding:40px 20px 64px}
+h2{font-size:1.25rem;margin:2rem 0 .6rem}
+.eff{color:var(--muted);margin:0 0 2rem}
+a{color:var(--accent-text)}
+ul{padding-left:1.2rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+footer.wrap{border-top:1px solid var(--line);padding:24px 20px 48px;font-size:14px;color:var(--muted)}
+footer nav a{margin-right:14px}
+address{font-style:normal}

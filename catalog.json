@@ -1,6 +1,8 @@
 {
   "brand": "Sugarmile",
   "orderPrefix": "SG",
+  "flavorNames": {"OG": "Original Maple", "SX": "Salted Maple+", "CB": "Cold Brew Maple", "MX": "Trail Mix Box"},
+  "sizeLabels": {"12": "12-pack", "24": "24-pack"},
   "subscribePct": 15,
   "bundle": [
     {
@@ -18,13 +20,13 @@
       "id": "standard",
       "label": "Standard",
       "eta": "3\u20135 business days",
-      "price": 4.95
+      "price": 5.95
     },
     {
       "id": "express",
       "label": "Express",
       "eta": "1\u20132 business days",
-      "price": 11.95
+      "price": 12.95
     }
   ],
   "codes": [
