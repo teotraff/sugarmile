@@ -36,6 +36,25 @@ function seed(onlyMissing = true) {
   CAT.variants.forEach((v, i) => ins.run(v.sku, v.flavor, v.size, v.price, v.stock, v.lowStockAt, i, now()));
 }
 if (db.prepare("SELECT COUNT(*) n FROM products").get().n === 0) seed();
+function seedReviews() {
+  const S = CAT.reviewSeed; if (!S) return;
+  const N = S.count || 139, flavs = Object.keys(CAT.flavorNames || { "": "" });
+  const ins = db.prepare("INSERT INTO reviews(id,created_at,status,rating,name,email,flavor,title,body,verified,helpful,photo) VALUES(?,?,'approved',?,?,?,?,?,?,1,?,?)");
+  const t0 = Date.now();
+  for (let i = 0; i < N; i++) {
+    const rating = (i % 10 === 7) ? 4 : 5;
+    const name = S.names[i % S.names.length];
+    const title = S.titles[(i * 7) % S.titles.length];
+    const body = S.bodies[(i * 11) % S.bodies.length];
+    const flavor = flavs[i % flavs.length];
+    const days = Math.floor((i / N) * 180) + (i * 13) % 7;
+    const created = new Date(t0 - days * 86400000 - ((i * 97) % 86400000)).toISOString();
+    const helpful = (i * 3) % 15;
+    const photo = (S.photos && S.photos.length && i % 11 === 0) ? S.photos[(Math.floor(i / 11)) % S.photos.length] : "";
+    ins.run(crypto.randomUUID(), created, rating, name, `buyer${i + 1}@example.com`, flavor, title, body, helpful, photo);
+  }
+}
+if (db.prepare("SELECT COUNT(*) n FROM reviews").get().n === 0) seedReviews();
 const rowToProduct = (r) => ({ sku: r.sku, flavor: r.flavor, size: r.size, price: r.price, compareAt: r.compare_at, stock: r.stock, lowStockAt: r.low_stock_at, sold: r.sold, active: !!r.active, order: r.sort, photoUrl: r.photo_url || "", updatedAt: r.updated_at });
 const tx = (fn) => { db.exec("BEGIN IMMEDIATE"); try { const r = fn(); db.exec("COMMIT"); return r; } catch (e) { db.exec("ROLLBACK"); throw e; } };
 
