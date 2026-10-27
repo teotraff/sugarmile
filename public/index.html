@@ -7,10 +7,10 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Sugarmile Maple Energy Gel</title>
 <meta name="description" content="Pure maple syrup and sea salt energy gel. 25 g carbs, 220 or 500 mg sodium, caffeine option. Free US shipping over $50.">
-<meta property="og:type" content="product"><meta property="og:title" content="Sugarmile Maple Energy Gel"><meta property="og:description" content="Pure maple syrup and sea salt energy gel. 25 g carbs, 220 or 500 mg sodium, caffeine option. Free US shipping over $50."><meta property="og:image" content="https://__DOMAIN__/img/SG-group.webp">
+<meta property="og:type" content="product"><meta property="og:title" content="Sugarmile Maple Energy Gel"><meta property="og:description" content="Pure maple syrup and sea salt energy gel. 25 g carbs, 220 or 500 mg sodium, caffeine option. Free US shipping over $50."><meta property="og:image" content="https://sugarmile.store/img/SG-group.webp">
 <meta name="theme-color" content="#ffffff">
 <link rel="preload" href="img/SG-hero.webp" as="image" fetchpriority="high">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Sugarmile Maple Energy Gel", "brand": {"@type": "Brand", "name": "Sugarmile"}, "description": "Pure maple syrup and sea salt energy gel. 25 g carbs, 220 or 500 mg sodium, caffeine option. Free US shipping over $50.", "image": ["https://__DOMAIN__/img/SG-group.webp"], "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": 36, "highPrice": 66, "availability": "https://schema.org/InStock"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Sugarmile Maple Energy Gel", "brand": {"@type": "Brand", "name": "Sugarmile"}, "description": "Pure maple syrup and sea salt energy gel. 25 g carbs, 220 or 500 mg sodium, caffeine option. Free US shipping over $50.", "image": ["https://sugarmile.store/img/SG-group.webp"], "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": 36, "highPrice": 66, "availability": "https://schema.org/InStock"}}</script>
 <style>
 /* ---- storefront structure v2 (light DTC layout; colors/type from brand tokens) ---- */
 :root{color-scheme:light}
@@ -608,7 +608,7 @@ input[type=range]:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
   <div><h4>Shop</h4><ul><li><button class="link" data-act="scroll" data-to="shop">All flavors</button></li><li><button class="link" data-act="scroll" data-to="newsletter">10% off first order</button></li><li><button class="link" data-act="scroll" data-to="facts">Ingredients</button></li><li><button class="link" data-act="scroll" data-to="reviews">Reviews</button></li></ul></div>
   <div><h4>Help</h4><ul><li><button class="link" data-act="scroll" data-to="faq">FAQ</button></li><li><button class="link" data-act="track">Track your order</button></li><li><a class="link" href="/shipping">Shipping</a></li><li><a class="link" href="/refund-policy">Refund policy</a></li><li><a class="link" href="/contact">Contact us</a></li><li><button class="link" id="admin-link" data-act="admin" hidden>Store admin</button></li></ul></div>
   <div><h4>Legal</h4><ul><li><a class="link" href="/privacy">Privacy policy</a></li><li><a class="link" href="/terms">Terms of service</a></li></ul></div>
-  <div><h4>Contact</h4><ul><li><a class="link" href="mailto:support@__DOMAIN__">support@__DOMAIN__</a></li><li><a class="link" href="tel:+13075550142">+1 (307) 555-0142</a><br><small>Mon–Fri, 9 am–5 pm ET, voicemail after hours</small></li><li>600 Pine Street, Suite 410, Seattle, WA 98101</li><li>We reply within 1 business day.</li></ul></div>
+  <div><h4>Contact</h4><ul><li><a class="link" href="mailto:support@sugarmile.store">support@sugarmile.store</a></li><li><a class="link" href="tel:+13075550142">+1 (307) 555-0142</a><br><small>Mon–Fri, 9 am–5 pm ET, voicemail after hours</small></li><li>600 Pine Street, Suite 410, Seattle, WA 98101</li><li>We reply within 1 business day.</li></ul></div>
 
   <p class="disclaimer">Sugarmile energy gels are a food for active adults. Cold Brew Maple contains 50 mg caffeine per pouch and is not recommended for children, people sensitive to caffeine, or women who are pregnant or nursing. Consult your physician before starting a new nutrition plan, especially if you have diabetes or a medical condition.<br>© 2026 Rainbridge Market LLC, 600 Pine Street, Suite 410, Seattle, WA 98101. Sugarmile is a brand of Rainbridge Market LLC.</p>
 </div></footer>
@@ -650,7 +650,7 @@ window.STORE_CONFIG = (function () {
     packImg: (v) => `SG-${v.flavor}-${v.size}`,
     flavors, sizes, variants,
     subscribePct: 15, subscribeEvery: "every 30 days",
-    freeShipOver: 50, supportEmail: "support@__DOMAIN__",
+    freeShipOver: 50, supportEmail: "support@sugarmile.store",
     metaPixelId: "__META_PIXEL_ID__", // Meta Pixel ID, filled by server.js from META_PIXEL_ID in .env; empty = off
     clarityId: "__CLARITY_ID__", // Microsoft Clarity project ID, filled by server.js from CLARITY_ID in .env; empty = off
     shipping: [{ id: "standard", label: "Standard", eta: "3–5 business days", price: 5.95 }, { id: "express", label: "Express", eta: "1–2 business days", price: 12.95 }],
@@ -1115,10 +1115,10 @@ window.STORE_CONFIG = (function () {
     <section class="sec banner"><div class="banner__img"><img src="${img(C.bannerImg || C.imgKey + "-content")}" alt="${esc(C.brand)} in use" loading="lazy"></div>
       <div class="banner__copy"><p class="eyebrow">${esc(H.bannerEyebrow)}</p><h2 class="h2">${esc(H.bannerTitle)}</h2><p>${esc(H.bannerText)}</p></div></section>
     <section class="sec reviews" id="reviews"><div class="wrap">${vReviews()}</div></section>
-    <section class="sec faq" id="faq"><div class="wrap faq__in"><div><p class="eyebrow">FAQ</p><h2 class="h2">Questions, answered</h2><p class="muted">Can't find it here? Email <a href="mailto:support@__DOMAIN__">support@__DOMAIN__</a> or call +1 (307) 555-0142. We reply within 1 business day.</p></div>
+    <section class="sec faq" id="faq"><div class="wrap faq__in"><div><p class="eyebrow">FAQ</p><h2 class="h2">Questions, answered</h2><p class="muted">Can't find it here? Email <a href="mailto:support@sugarmile.store">support@sugarmile.store</a> or call +1 (307) 555-0142. We reply within 1 business day.</p></div>
       <div><div class="faq__search"><label class="sr" for="faq-q">Search questions</label><input id="faq-q" type="search" placeholder="Search questions, e.g. “caffeine” or “cancel”" autocomplete="off" data-faq></div>
         <div id="faq-list">${H.faq.map((q, i) => `<details class="faq__item"${i === 0 ? " open" : ""}><summary>${esc(q[0])}</summary><p>${esc(q[1])}</p></details>`).join("")}</div>
-        <p id="faq-none" class="muted" hidden>No matching questions. Email <a href="mailto:support@__DOMAIN__">support@__DOMAIN__</a> and we'll answer within 1 business day.</p></div></div></section>
+        <p id="faq-none" class="muted" hidden>No matching questions. Email <a href="mailto:support@sugarmile.store">support@sugarmile.store</a> and we'll answer within 1 business day.</p></div></div></section>
     <section class="guarantee"><div class="wrap guarantee__in"><span class="guarantee__seal">${ICON.shield}<b>30</b><small>DAY</small></span><div><h2>${esc(H.guaranteeTitle)}</h2><p>${esc(H.guaranteeText)}</p></div></div></section>
     <section class="sec news" id="newsletter"><div class="wrap news__in">
       <div><h2 class="h2">${esc(H.newsTitle)}</h2><p>${esc(H.newsSub)}</p></div>
@@ -1287,10 +1287,10 @@ window.STORE_CONFIG = (function () {
               <div class="pm__bill"><div class="f"><label for="bill-a1">Billing address</label><input id="bill-a1" data-pay="a1" autocomplete="billing address-line1" value="${esc(P.a1)}"></div>
                 <div class="grid2"><div class="f"><label for="bill-city">City</label><input id="bill-city" data-pay="city" autocomplete="billing address-level2" value="${esc(P.city)}"></div><div class="f"><label for="bill-zip">ZIP</label><input id="bill-zip" data-pay="zip" inputmode="numeric" autocomplete="billing postal-code" value="${esc(P.zip)}"></div></div></div>
             </div>          </div></fieldset>
-        ${S.cart.some((l) => l.sub) ? `<div class="f"><label class="check"><input id="ck-renew" name="renew" type="checkbox"> I agree my subscription renews every 30 days at ${money(S.cart.filter((l) => l.sub).reduce((s, l) => s + lineUnit(l) * l.qty, 0))} plus tax and shipping until I cancel. Cancel anytime by emailing support@__DOMAIN__.</label></div>` : ""}
+        ${S.cart.some((l) => l.sub) ? `<div class="f"><label class="check"><input id="ck-renew" name="renew" type="checkbox"> I agree my subscription renews every 30 days at ${money(S.cart.filter((l) => l.sub).reduce((s, l) => s + lineUnit(l) * l.qty, 0))} plus tax and shipping until I cancel. Cancel anytime by emailing support@sugarmile.store.</label></div>` : ""}
         <p class="err" id="ck-err" role="alert" hidden></p>
         <button class="btn btn--accent btn--block" type="submit" id="ck-submit">Place order · ${money(t.total)}</button>
-        <p class="fine">Sales tax is calculated at payment. By placing an order you agree to our <a class="link" href="/terms" target="_blank">Terms of Service</a>, <a class="link" href="/refund-policy" target="_blank">Refund Policy</a> and <a class="link" href="/privacy" target="_blank">Privacy Policy</a>. Questions? <a class="link" href="mailto:support@__DOMAIN__">support@__DOMAIN__</a></p>
+        <p class="fine">Sales tax is calculated at payment. By placing an order you agree to our <a class="link" href="/terms" target="_blank">Terms of Service</a>, <a class="link" href="/refund-policy" target="_blank">Refund Policy</a> and <a class="link" href="/privacy" target="_blank">Privacy Policy</a>. Questions? <a class="link" href="mailto:support@sugarmile.store">support@sugarmile.store</a></p>
       </form>
       <aside class="ck-sum"><h2>Order summary</h2>
         <ul class="lines lines--sum">${S.cart.map((l) => { const v = variantBy(l.sku); return `<li class="line"><div class="line__art"><img src="${thumb(v)}" alt=""><span class="badge">${l.qty}</span></div><div class="line__info"><b>${esc(flavorBy(v.flavor).name)}</b><span>${esc(sizeBy(v.size).label)}${l.sub ? " · Subscription" : ""}</span></div><div class="line__price">${money(lineUnit(l) * l.qty)}</div></li>`; }).join("")}</ul>
