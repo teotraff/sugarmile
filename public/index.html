@@ -1769,9 +1769,9 @@ window.STORE_CONFIG = (function () {
   function vFuel() {
     const T = S.tool, labs = { light: "Easy", moderate: "Steady", hard: "Race pace" };
     return `<p class="tool__k">Fuel planner</p><h3>How many ${esc(C.fuel.unit)} for your session?</h3>
-      <div class="f"><label for="tl-dur">Duration: <b data-lab="dur">${T.dur}</b> min</label><input id="tl-dur" type="range" min="30" max="360" step="15" value="${T.dur}" data-tool="dur"></div>
+      <div class="f"><label for="tl-dur">Duration: <b data-lab="dur">${T.dur}</b> min</label><input id="tl-dur" type="range" min="30" max="360" step="15" value="${T.dur}" ${rp(T.dur, 30, 360)} data-tool="dur"></div>
       <div class="seg2" role="group" aria-label="Effort">${["light", "moderate", "hard"].map((k) => `<button class="${T.int === k ? "is-on" : ""}" data-act="tool-int" data-id="${k}">${labs[k]}</button>`).join("")}</div>
-      <div class="f"><label for="tl-wk">Long sessions per week: <b data-lab="weekly">${T.weekly}</b></label><input id="tl-wk" type="range" min="1" max="7" step="1" value="${T.weekly}" data-tool="weekly"></div>${fuelOut()}`;
+      <div class="f"><label for="tl-wk">Long sessions per week: <b data-lab="weekly">${T.weekly}</b></label><input id="tl-wk" type="range" min="1" max="7" step="1" value="${T.weekly}" ${rp(T.weekly, 1, 7)} data-tool="weekly"></div>${fuelOut()}`;
   }
   function fuelOut() {
     const T = S.tool, F = C.fuel, rate = { light: 30, moderate: 45, hard: 60 }[T.int] + (T.dur > 150 && T.int === "hard" ? 15 : 0);
