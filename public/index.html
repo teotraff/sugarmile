@@ -780,7 +780,7 @@ window.STORE_CONFIG = (function () {
   const pxView = () => { const v = C.variants.find((x) => x.flavor === S.sel.flavor && x.size === S.sel.size); if (v) px("ViewContent", { currency: "USD", value: priceOf(v.sku), content_type: "product", content_ids: [v.sku] }); };
   const flavorBy = (id) => C.flavors.find((f) => f.id === id);
   const sizeBy = (id) => C.sizes.find((s) => s.id === id);
-  const thumb = (v) => img(C.packImg(v) + "-thumb"); // 320px copy of the pack shot for swatches, cart, cross-sell, sticky bar, quiz
+  const thumb = (v) => img(C.packImg(v) + "-thumb") + "?v=2"; // 320px copy of the pack shot for swatches, cart, cross-sell, sticky bar, quiz
   const rp = (v, a, b) => `style="--p:${((v - a) / (b - a)) * 100}%"`; // filled part of a range track
   const stars = (n) => { const r = Math.round(n * 2) / 2; let s = ""; for (let i = 1; i <= 5; i++) s += `<i class="st${r >= i ? " on" : r >= i - .5 ? " half" : ""}"></i>`; return `<span class="stars" aria-label="${n.toFixed(1)} out of 5">${s}</span>`; };
 
