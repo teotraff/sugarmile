@@ -84,7 +84,7 @@ function body(req, limit = 1e5) {
 // ad attribution the browser sends with an order (?campaign_name=… from Meta, or utm_*); anything else is dropped
 const ATTR_KEYS = ["campaign_name", "adset_name", "ad_name", "network_channel", "source", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "at"];
 const hits = new Map(); // tiny per-IP rate limit for public writes
-function limited(req, max = 20) { const ip = req.headers["x-forwarded-for"]?.split(",")[0].trim() || req.socket.remoteAddress; const t = Date.now(), w = (hits.get(ip) || []).filter((x) => t - x < 60000); w.push(t); hits.set(ip, w); return w.length > max; }
+function limited(req, max = 20) { const ip = max + ":" + (req.headers["x-forwarded-for"]?.split(",")[0].trim() || req.socket.remoteAddress); /* each limit counts on its own: sign-ups must not use up orders */ const t = Date.now(), w = (hits.get(ip) || []).filter((x) => t - x < 60000); w.push(t); hits.set(ip, w); return w.length > max; }
 function isAdmin(req) { const h = req.headers.authorization || ""; const tok = h.startsWith("Bearer ") ? h.slice(7) : ""; const a = Buffer.from(tok), b = Buffer.from(ADMIN_TOKEN); return a.length === b.length && crypto.timingSafeEqual(a, b); }
 function adjustStock(sku, delta) { db.prepare("UPDATE products SET stock=stock+?, sold=MAX(0,sold-?), updated_at=? WHERE sku=?").run(delta, delta, now(), sku); }
 
@@ -125,8 +125,7 @@ async function api(req, res, url) {
       attr: Object.fromEntries(ATTR_KEYS.filter((k) => typeof o.attr?.[k] === "string" && o.attr[k].trim()).map((k) => [k, clean(o.attr[k], 150)])) };
     try {
       tx(() => {
-        for (const it of items) { const r = db.prepare("SELECT stock FROM products WHERE sku=?").get(it.sku); if (r.stock < it.qty) throw Object.assign(new Error("stock"), { sku: it.sku, left: r.stock }); }
-        for (const it of items) adjustStock(it.sku, -it.qty);
+        for (const it of items) { const r = db.prepare("SELECT stock FROM products WHERE sku=?").get(it.sku); if (r.stock < it.qty) throw Object.assign(new Error("stock"), { sku: it.sku, left: r.stock }); adjustStock(it.sku, -it.qty); } // one line at a time: the same sku can sit on two cart lines
         db.prepare("INSERT INTO orders(id,created_at,status,email,total,data) VALUES(?,?,?,?,?,?)").run(id, order.createdAt, order.status, order.email, totals.total, JSON.stringify(order));
       });
     } catch (e) { if (e.message === "stock") return send(res, 409, { error: "stock", sku: e.sku, left: e.left }); throw e; }
@@ -318,7 +317,7 @@ function serveStatic(req, res, url) {
 }
 
 http.createServer(async (req, res) => {
-  const url = new URL(req.url, "http://x");
-  try { if (url.pathname.startsWith("/api/")) await api(req, res, url); else serveStatic(req, res, url); }
+  try { const url = new URL(req.url, "http://x"); // inside try: a malformed URL must not kill the process
+    if (url.pathname.startsWith("/api/")) await api(req, res, url); else serveStatic(req, res, url); }
   catch (e) { console.error(e); send(res, e.status || 500, { error: e.status ? e.message : "Server error" }); }
 }).listen(PORT, () => console.log(`${CAT.brand} store running on http://localhost:${PORT}  (admin: /#admin)`));

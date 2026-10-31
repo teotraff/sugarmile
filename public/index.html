@@ -1612,7 +1612,7 @@ window.STORE_CONFIG = (function () {
     } else if (kind === "wheel") { await spinWheel(f);
     } else if (kind === "quizmail") {
       const em = f.email.value; if (!emailOk(em)) { toast("Enter a valid email address.", "bad"); return; }
-      const r = quizResult(); try { await Store.addSubscriber({ email: em, source: "quiz", sku: null, code: C.promo.code }); } catch (e) {}
+      const r = quizResult(); try { await Store.addSubscriber({ email: em, source: "quiz", sku: null, code: C.promo.code }); } catch (e) { toast("Couldn't save your email. Try again.", "bad"); return; }
       LS.set("subscribed", true); const won = applyBest(C.promo); if (won) renderChrome();
       f.outerHTML = `<p class="thanks">Sent. Your match is ${esc(flavorBy(r.fl).name)}. ${won ? `Code <span class="code">${esc(C.promo.code)}</span> is applied to your cart.` : keptMsg()}</p>`;
     } else if (kind === "track") { const d = Object.fromEntries(new FormData(f)); await doTrack(d.id, d.email);
